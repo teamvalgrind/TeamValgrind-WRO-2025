@@ -1,5 +1,4 @@
 
----
 
 # Equipo [Team ValGrind]: WRO 2025
 
@@ -18,23 +17,18 @@
         - [Impresion 3D](#impresion-3d)
         - [Movilidad](#movilidad)
     - [Apartado Electronico](#apartado-electronico)
-        - [Baterias](#baterias)
         - [Sensores](#sensores)
         - [Conexiones y Circuitos](#conexiones-y-circuitos)
         - [Microcontroladores](#microcontroladores)
     - [Apartado Programatico](#apartado-programatico)
         - [Codigo por Componente](#codigo-por-componente)
-        - [Diagramas de Flujo](#diagramas-de-flujo)
 4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
-    - [Mecanica](#mecanica)
-    - [Electronica](#electronica)
-    - [Programacion](#programacion)
 
 ---
 
 ## Nuestro Equipo
 
-<img src="https://github.com/damuec/ValRepo1/assets/foto-equipo.jpg" alt="Foto del equipo" width="400"/>
+[![IMG-20250611-WA0013.jpg](https://i.postimg.cc/KvM5HgKW/IMG-20250611-WA0013.jpg)](https://postimg.cc/rKqWdsNG)
 
 Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase regional de la **WRO 2025**.
 
@@ -43,20 +37,40 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 ### Integrantes
 
 - **Samuel Burgos**  
-  17 años, 09/01/2008  
-<foto>
+  17 años, 09/01/2008
+
+  > **Rol:** : **Programador**  
+> *Especialista en Python y arquitectura de soluciones complejas. Domina GitHub y PyCharm además de algoritmos complejos*.
+> **Fun Fact:**  
+> *Su banda favorita es Foo Fighters* 
+
+
+[![IMG-20250607-044258.jpg](https://i.postimg.cc/Rh55QMjr/IMG-20250607-044258.jpg)](https://postimg.cc/BLgVJGSN)
 
 - **Sebastián Salina**  
   17 años, 22/08/2008 
-<foto>
+
+  > **Rol:** **Capitán**
+> *Diseña piezas en 3D y además posee la capacidad de imprimir estos mismos al manejar una impresora 3D*  
+> **Fun Fact:**  
+> *Una vez imprimió un Pokémon gigante de filamento para Cristobal* 
+
+[![IMG-20250607-043801.jpg](https://i.postimg.cc/Bns7Qb1y/IMG-20250607-043801.jpg)](https://postimg.cc/GH7xXcKJ)
 
 - **Cristobal Mogollón**
-  14 años, 14/07/2010
- <foto>
+   14 años, 14/07/2010
+    
+   > **Rol:**  **Programador**  
+> *Se encarga principalmente de C++, Arduino IDE, y algunos aspectos de la electrónica.*  
+> **Fun Fact:**  
+> *Una vez le pidió a Sebastián imprimir un Pokémon gigante de filamento*
+ [![IMG-20250607-043532.jpg](https://i.postimg.cc/43XVFVRw/IMG-20250607-043532.jpg)](https://postimg.cc/WdfddD3J)
 
 - **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
 - **Instagram Oficial:** [@team_valgrind](https://instagram.com/team_valgrind)
 - **Contáctanos:** [valgrind2025@gmail.com](mailto:valgrind2025@gmail.com)
+- **Youtube:**
+[Team ValGrind](https://youtube.com/@teamvalgrind?si=ZJbz7CX9eOX75H2U)
 
 ---
 
@@ -76,11 +90,14 @@ Este nombre no solo es un guiño a la mitología mencionada, sino que además co
 
 [![Logo-wro.png](https://i.postimg.cc/85CCHB4G/Logo-wro.png)](https://postimg.cc/t1LyR68v)
 
-"Diseñar, Construir y Programar"
+#### "Diseñar, Construir y Programar"
+ Un robot autónomo capaz de superar los desafíos de la WRO 2025, utilizando innovación y trabajo en equipo para lograr un desempeño sobresaliente en la etapa regional y avanzar a la nacional. Para llegar a esto, hemos pasado los últimos meses diseñando, construyendo, armando y programando nuestro más nuevo proyecto "Heimdall"
 
-- Un robot autónomo capaz de superar los desafíos de la WRO 2025, utilizando innovación y trabajo en equipo para lograr un desempeño sobresaliente en la etapa regional y avanzar a la nacional. Para llegar a esto, hemos pasado los últimos meses diseñando, construyendo, armando y programando nuestro más nuevo proyecto "Heimdall"
+ 
+> [!NOTE]
+> La World Robot Olympiad (WRO) es una competencia internacional de robótica educativa que se desarrolla en varias fases, y nuestro equipo lógicamente tiene que comenzar por la fase regional, mediante la cual al ganarla se accede a la Fase Nacional. Cada país organiza su propio torneo clasificatorio, donde equipos de jóvenes compiten en distintas categorías, aplicando conocimientos de robótica y STEAM. Por último, la fase a la cual nuestro equipo quiere llegar es la Final Internacional. Los equipos ganadores de cada país participan en la competencia global, donde enfrentan desafíos más complejos y compiten con representantes de más de 95 países 
 
-La World Robot Olympiad (WRO) es una competencia internacional de robótica educativa que se desarrolla en varias fases, y nuestro equipo lógicamente tiene que comenzar por la fase regional, mediante la cual al ganarla se accede a la Fase Nacional. Cada país organiza su propio torneo clasificatorio, donde equipos de jóvenes compiten en distintas categorías, aplicando conocimientos de robótica y STEAM. Por último, la fase a la cual nuestro equipo quiere llegar es la Final Internacional. Los equipos ganadores de cada país participan en la competencia global, donde enfrentan desafíos más complejos y compiten con representantes de más de 95 países 
+[![IMG-20250612-201120.jpg](https://i.postimg.cc/xC9wQTBk/IMG-20250612-201120.jpg)](https://postimg.cc/yJrQXB1B)
 
 Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido también tenemos la convicción de poder crear un robot no solo funcional, sino que llene nuestras expectativas; A pesar de ser intangible nuestro deseo de poder culminar nuestro proyecto como un equipo unido y verlo brillar, también es una meta importante para nosotros.
 
@@ -88,207 +105,204 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ## El Robot
 
+[![IMG-20250614-051714-898.jpg](https://i.postimg.cc/q7fZxFMX/IMG-20250614-051714-898.jpg)](https://postimg.cc/Yv33pbFh)
+
 ### Apartado Mecanico
 
-#### Impresion 3D
+| [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![IMG-20250614-045703-999.jpg](https://i.postimg.cc/fWFyC7mT/IMG-20250614-045703-999.jpg)](https://postimg.cc/NL6QfHdW)| 
+| :--: | :--: | 
+| *Frontal* | *Posterior* |
+|[![IMG-20250614-045741-494.jpg](https://i.postimg.cc/MGPf8CM1/IMG-20250614-045741-494.jpg)](https://postimg.cc/B8FnTwCv) | [![IMG-20250614-045718-999.jpg](https://i.postimg.cc/wTmvGtQ5/IMG-20250614-045718-999.jpg)](https://postimg.cc/YhtM4CVj)| 
+| *Izquierda* | *Derecha* |
+|[![IMG-20250614-045724-391.jpg](https://i.postimg.cc/MHtDkPS4/IMG-20250614-045724-391.jpg)](https://postimg.cc/YLGgYxjf) |[![IMG-20250614-045706-621.jpg](https://i.postimg.cc/ZqZC3T38/IMG-20250614-045706-621.jpg)](https://postimg.cc/w1fqYYwM) |
+| *Superior* | *Inferior* |
 
-Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante ```Fusion 360```
+#### Impresion 3D 
 
-- Fusion 360 es una plataforma de software de modelado 3D, CAD, CAM, CAE y PCB basada en la nube, destinada al diseño y la fabricación de productos. Nos permite diseñar y crear productos de acuerdo a sus especificaciones particulares, garantizando que cada pieza cumpla con los más exigentes criterios de estética, forma, ajuste y funcionalidad. Además, incorpora un conjunto integral de herramientas avanzadas para el diseño de placas de circuito impreso y componentes electrónicos, lo que facilita la conceptualización y materialización de cualquier idea, incluso las más complejas. Al implementar estas funciones, la plataforma optimiza significativamente tanto el tiempo como los costos asociados, asegurando que el proceso de producción se realice de manera eficiente y que las piezas obtenidas sean de la más alta calidad. Nosotros usamos esta herramienta gráfica y de diseño para realizar los diseños del chasis y las piezas personalizadas de nuestro robot.
+Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante Fusion 360
 
-#### Diseño STL del Chasis de Heimdall
 
-![Chasis 3D](https://github.com/damuec/ValRepo1/assets/chasis-3d.png)
+> [!NOTE]
+> Fusion 360 es una plataforma de software de modelado 3D, CAD, CAM, CAE y PCB basada en la nube, destinada al diseño y la fabricación de productos. Nos permite diseñar y crear productos de acuerdo a sus especificaciones particulares, garantizando que cada pieza cumpla con los más exigentes criterios de estética, forma, ajuste y funcionalidad. Además, incorpora un conjunto integral de herramientas avanzadas para el diseño de placas de circuito impreso y componentes electrónicos, lo que facilita la conceptualización y materialización de cualquier idea, incluso las más complejas. Al implementar estas funciones, la plataforma optimiza significativamente tanto el tiempo como los costos asociados, asegurando que el proceso de producción se realice de manera eficiente y que las piezas obtenidas sean de la más alta calidad. Nosotros usamos esta herramienta gráfica y de diseño para realizar los diseños del chasis y las piezas personalizadas de nuestro robot.
+
+[![IMG-20250613-WA0053.jpg](https://i.postimg.cc/Pr5b7SVZ/IMG-20250613-WA0053.jpg)](https://postimg.cc/G96s8xCh)
 
 #### Movilidad
 
-Ahora bien, ya habiendo dilucidado las piezas que confirmarán nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
+Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las piezas de nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
 
-Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones críticas.
+> [!NOTE]
+> Video de Heimdall realizando el Open Challenge
+[Video](https://youtu.be/av_kJ_hcNXI?si=83bRdQo1FuN1ajur)
+
+> [!NOTE]
+> Video de Heimdall esquivando bloques del Closed Challenge 
+[Video](https://youtu.be/y2dTKZ1CmCM?si=7QRf_ff8Sa_BZ0Na)
+
+Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones de forma eficaz. También cabe destacar el hecho de que utilizamos una técnica llamada  Ackermann Positivo para emplear el sistema de movilidad de nuestro vehículo.
+
+[![IMG-20250614-WA0001.jpg](https://i.postimg.cc/tJFzTvy2/IMG-20250614-WA0001.jpg)](https://postimg.cc/30JGfBkv)
+
+##### El diferencial de los vehículos, como su nombre lo indica, permite que exista una diferencia en la velocidad de giro entre la rueda interna y la rueda externa del vehículo cuando se da una vuelta o se está girando la dirección. No importa si el vehículo es tracción trasera o delantera, la función es la misma.
+
+[![10a4.jpg](https://i.postimg.cc/K89xJC6v/10a4.jpg)](https://postimg.cc/G4sWpg3Z)
+
+####  Sistema de Movimiento y Tracción 
+
+Ahondando en lo mencionado anteriormente, Heimdall utiliza lo que normalmente es denominado sistema ackermann positivo, el cual es un sistema derivado del principio de Ackermann, cuyo objetivo es lograr que en curvas la **rueda interior (θᵢ) gire más que la exterior (θₒ)** para minimizar deslizamiento lateral (*scrub*).  
+
+- **Ecuación fundamental**:  
+  **cot(θₒ) - cot(θᵢ) = W / L**  
+  - *W*: Distancia entre pivotes de dirección (batalla)  
+  - *L*: Distancia entre ejes  
+  
+
+### **Implementación Física**
+```asciidoc
+[Rueda exterior (θₒ)]
+  │
+  ├─── Brazo de dirección  
+  │        \  
+[Cuadro]──┤         \  
+  │        │          \  
+  │        │           ●── Centro teórico (eje trasero)  
+  │        │          /  
+  │        │         /  
+  ├─── Brazo de dirección  
+  │  
+[Rueda interior (θᵢ > θₒ)]
+```
+
+---
+
+##### **Relación de Velocidades en Curva**
+
+```
+ωₒ / ωᵢ = (R + W/2) / (R - W/2)
+```
+- `ωₒ`: Velocidad angular rueda exterior.  
+- `ωᵢ`: Velocidad angular rueda interior.  
+- `R`: Radio de giro del centro del eje.  
+
+---
+
+##### **Fuerzas en Conflicto**
+
+```mermaid
+flowchart LR
+    A[Motor] --> B[Diferencial]
+    B --> C[Semieje der.\nRueda ext. ωₒ]
+    B --> D[Semieje izq.\nRueda int. ωᵢ]
+    C --> E[Fuerza de tracción ↑]
+    D --> F[Ángulo de giro θᵢ > θₒ]
+    E & F --> G[Cuadro]
+    G --> H{Deflexión estructural?}
+    H -->|Sí| I[Pérdida de Ackermann]
+    H -->|No| J[Comportamiento ideal]
+```
+
+> [!WARNING]
+> De utilizar estos sistemas, recomendamos tener cuidado con los siguientes inconvenientes los cuales aparecieron dentro de nuestras prácticas con la implementación del mencionado sistema:
+
+1. **Paradox Steering**:  
+   - *Causa*: La tracción en la rueda interior (baja adherencia) contrarresta el ángulo de giro.  
+   - *Solución*: Control electrónico (freno vectorial).  
+
+2. **Fatiga en semiejes**:  
+   - *Causa*: Torsión excesiva en juntas homocinéticas debido a θᵢ máximo + par motor.  
+   - *Solución*: Semiejes asimétricos con ángulos de trabajo optimizados.  
+
+---
+
+##### Soluciones de Ingeniería
+-  **Estrategias Recomendadas**
+
+| **Componente**   | **Innovación**                                    | **Beneficio**                                  |
+|------------------|--------------------------------------------------|-----------------------------------------------|
+| **Cuadro**       | Subchasis desmontable con rigidez variable.      | Permite ajustes finos en competición.         |
+| **Diferencial**  | Electrónico con mapas por ángulo de giro.        | Regula par según θᵢ/θₒ (ej: Honda SH-AWD).   |
+| **Dirección**    | Brazo de Ackermann ajustable (rótulas roscadas). | Compensa desgaste o cambios de neumáticos.    |
+
+--- 
+
+
+[![Ackermann-turning-svg.png](https://i.postimg.cc/CL08P93k/Ackermann-turning-svg.png)](https://postimg.cc/8syssXPz)
 
 El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico de transmisión y tracción**, cuidadosamente seleccionado con componentes específicos de alta calidad. Vamos a desglosar cómo cada pieza encaja en este rompecabezas de ingeniería en miniatura, usando la escala **1/18** como referencia clave para tamaño e integración:
 
-1.  **Diferenciales (1/18)**
-    *  Los ubicamos en el eje motriz , permiten que las ruedas izquierda y derecha giren a velocidades diferentes al tomar curvas. Esto es *crucial* para evitar que el robot "patine" o forcejee en giros cerrados, manteniendo la estabilidad incluso durante maniobras agresivas. Su escala 1/18 garantiza que sean compactos, ligeros y proporcionales al resto del chasis y ruedas del robot de competición.
+1.  **Diferenciales y Ejes de Transmisión (1/18)**
 
-2.  **Los Conductores de la Fuerza: Ejes de Transmisión (1/18)**
-    *   Estos robustos ejes son las **arterias mecánicas**. Conectan directamente la salida de los diferenciales (1/18) a las ruedas motrices. Transfieren el par motor generado hacia las ruedas, haciendo girar los neumáticos. Su diseño a escala 1/18 asegura la longitud y resistencia adecuadas para soportar las fuerzas de torsión y tracción sin añadir peso excesivo ni desbalancear el robot.
-
-3.  **El Corazón que Late: Motor Brushed Injora 180° 48T**
-    *   Este motor de escobillas (brushed) es la **fuente de potencia controlada**. Sus características lo hacen ideal para WRO:
-        *   **180°**: Indica que su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto.
-        *   **48T (48 Vueltas)**: Se refiere al número de vueltas del devanado del inducido. Un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
-
-4.  **El Contacto con el Suelo: Ruedas de Drift**
-    *   Estas ruedas son el **elemento transformador clave para el derrape**. Están fabricadas típicamente con un compuesto plástico duro y liso (como ABS o PU). A diferencia de las ruedas de goma adherentes, estas **minimizan deliberadamente la fricción** con superficies como linóleo o parquet (comunes en pistas WRO). Esta baja tracción permite que las ruedas motrices (traseras) pierdan agarre de manera controlada cuando se aplica potencia y dirección, iniciando y manteniendo el derrape deseado. Su diámetro y ancho se eligen para complementar la escala 1/18 y el comportamiento dinámico del robot.
-
-5.  **La Estructura Articulada: Nudillos de Cruce (y Portanudillos)**
-    *   Estos componentes (a menudo incluyendo el "portanudillo" o "knuckle") son las **articulaciones sofisticadas** que conectan las ruedas al chasis. Permiten:
-        *   **Dirección**: Giran las ruedas delanteras para cambiar la trayectoria.
-        *   **Suspensión Básica**: Absorben pequeñas irregularidades y mantienen las ruedas en contacto con el suelo.
-        *   **Ángulo de Derrape**: Un buen diseño permite ajustar el ángulo de giro máximo, crucial para lograr derrapes pronunciados y estables. Son el punto de anclaje crítico para los terminales de los ejes de transmisión y los tirantes de dirección.
-
-6.  **La Suavidad del Giro: Rolineras (Rodamientos)**
-    *   Estos pequeños anillos con bolas son **héroes silenciosos de la eficiencia**. Se instalan en:
-        *   **Ruedas**: Para que giren libremente con mínima fricción.
-        *   **Nudillos/Portanudillos**: Donde pivota el eje de dirección.
-        *   **Ejes de Transmisión/Diferenciales**: Para soportar la rotación del eje dentro de su alojamiento.
-    *   Reemplazar buches (bushings) de plástico o bronce por rolineras **reduce drásticamente la fricción**, permitiendo que más potencia del motor llegue a las ruedas, mejorando la aceleración, la velocidad máxima y la duración de la batería.
-
-7.  **El Esqueleto Atornillado: Tornillos M3, Tuercas de Seguridad M2, Insertos Roscados M2**
-    *   Estos son los **elementos de unión esenciales** que mantienen todo el sistema mecánico integrado y robusto:
-        *   **Tornillos M3**: El "estándar" para ensamblar partes estructurales principales del chasis, motores, diferenciales y soportes. Su tamaño ofrece un buen equilibrio entre resistencia y peso.
-        *   **Tuercas de Seguridad M2**: Diseñadas con un anillo de nylon que "aprieta" contra el tornillo al roscarse. Ideales para **fijar componentes sujetos a vibración intensa** (como el motor, las ruedas o electrónica), evitando que se aflojen durante maniobras bruscas o derrapes prolongados.
-        *   **Insertos Roscados M2**: Pequeñas piezas metálicas que se presionan o atornillan en plástico. **Refuerzan los puntos de rosca** en piezas impresas en 3D o de plástico moldeado, permitiendo atornillar y desatornillar repetidamente (tornillos M2) sin dañar el agujero. Vital para uniones fiables en materiales más blandos.
-
-8.  **La Fuente de Energía: Batería Urgenex Li-Ion 3000mAh**
-    *   Esta batería de iones de litio es el **depósito de combustible compacto**. Sus características la hacen ideal para WRO:
-        *   **Li-Ion**: Tecnología que ofrece una excelente relación capacidad/peso y densidad energética, sin el efecto memoria de las NiMH.
-        *   **3000mAh**: Una capacidad alta para su tamaño (típico de escala 1/18), proporcionando **largos tiempos de operación** entre cargas, crucial para prácticas extensas y rondas de competición.
-        *   **Voltaje (implícito)**: Generalmente 7.4V (2S) o 11.1V (3S), proporcionando el voltaje necesario para alimentar motores brushed como el Injora 48T y la electrónica de control con suficiente potencia.
+[![61-Gzbd9-XBj-L-AC-UF894-1000-QL80.jpg](https://i.postimg.cc/7ZqxBpWR/61-Gzbd9-XBj-L-AC-UF894-1000-QL80.jpg)](https://postimg.cc/Cz6T56YC)
 
 ---
 
-### Apartado Electronico
+Los diferenciales se ubican en el eje motriz y permiten que las ruedas izquierda y derecha giren a velocidades diferentes al tomar curvas. Esta característica es fundamental para evitar que el robot patine o experimente esfuerzos innecesarios en giros cerrados, manteniendo así la estabilidad incluso durante maniobras agresivas. Su diseño a escala 1/18 asegura que sean compactos, ligeros y proporcionales al resto del chasis y ruedas del robot de competición.
 
-#### Baterias
+Por otro lado, los ejes de transmisión conectan directamente la salida de los diferenciales (1/18) a las ruedas motrices. Son responsables de transferir el par motor generado hacia las ruedas, permitiendo el giro de los neumáticos. El diseño a escala 1/18 garantiza la longitud y resistencia necesarias para soportar las fuerzas de torsión y tracción, sin añadir peso excesivo ni desbalancear el robot.
 
-Para el proyecto, decidimos usar dos baterías:
-
-- La primera es un paquete de 2 baterías recargables de 12 V con una capacidad nominal de 2000 mAh cada una. Utilizan tecnología de níquel-metal hidruro (NiMH), lo que elimina el efecto memoria y garantiza que, a pesar de repetidos ciclos de carga y descarga, la capacidad de energía se conserve de forma óptima. Con dimensiones aproximadas de 50 x 29 x 72 mm y cableado con cables desnudos, la batería permite una integración versátil y directa, lo cual facilita su integración dentro de nuestro proyecto sin afectar el rendimiento de otros componentes o el diseño.
-
-<foto>
-
-- La segunda es un kit de baterías recargables Tenergy, también de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 2000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
-
-<fotos>
-
-#### Sensores 
-
-El robot cuenta con múltiples sensores ultrasónicos (HC-SR04) ubicados estratégicamente para la detección de obstáculos y el cálculo de distancias, permitiendo navegación autónoma y segura. El sensor HC-SR04 es un sensor de distancia de bajo costo, por lo que su uso es muy frecuente en la robótica. Incorpora un par de transductores de ultrasonido que se utilizan de manera conjunta para determinar la distancia del sensor con un objeto colocado frente a este. Un transductor emite una ráfaga de ultrasonido y el otro capta el rebote de dicha onda.
-
-El tiempo que tarda la onda sonora en ir y regresar a un objeto puede utilizarse para conocer la distancia entre el origen del sonido y el objeto. La interfaz del sensor HC-SR04 y Arduino se logra mediante 2 pines digitales: el pin de disparo (trigger) y el pin de eco (echo). La función de cada uno de estos pines es la siguiente:
-
-- El pin trigger recibe un pulso de habilitación del microcontrolador, mediante el cual se le indica al módulo que comience a realizar la medición de distancia.
-- En el pin echo el sensor devuelve al microcontrolador un pulso cuyo ancho es proporcional al tiempo que tarda el sonido en viajar del transductor al obstáculo y luego de vuelta al módulo.
-
-#### Conexiones y Circuitos
-
-Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
-
-[Ver diagrama del circuito](./docs/diagrama-electronico.png)
-
-#### Microcontroladores
-
-Utilizamos ESP32.
+En el caso particular del robot Heimdall, originalmente se consideró una transmisión 4x4. Sin embargo, tras observar las limitaciones en los ángulos de cruce y la maniobrabilidad, se optó por priorizar la movilidad. Por ello, se decidió retirar los ejes de transmisión delanteros, transformando el robot en un sistema de tracción 4x2.
 
 ---
 
-### Apartado Programatico
+#### Diferencias mas importantes entre transmisión 4x4 y 4x2 
 
-#### Codigo por Componente
+| Característica                  | 4x4 (Tracción en las 4 ruedas)            | 4x2 (Tracción en 2 ruedas)                  |
+|----------------------------------|-------------------------------------------|---------------------------------------------|
+| **Motricidad**                  | Alta, ideal para terrenos irregulares o cruces complejos. | Moderada, suficiente para la mayoría de maniobras en pista controlada. |
+| **Ángulo de cruce**             | Limitado por la presencia de ejes delanteros. | Mayor libertad de giro y mejor ángulo de cruce. |
+| **Estabilidad en curvas**       | Más estable en condiciones extremas.       | Buena estabilidad, pero depende más del diseño del chasis y el diferencial. |
+| **Peso total**                  | Mayor, por la cantidad extra de componentes (ejes y diferenciales delanteros). | Menor, lo que contribuye a una mejor relación peso-potencia.              |
+| **Complejidad mecánica**        | Más alta; requiere mayor mantenimiento y ajuste. | Más sencilla, facilita el mantenimiento y reduce fallos mecánicos.         |
+| **Consumo energético**          | Más elevado por la transmisión a cuatro ruedas. | Menor, lo que puede aumentar la autonomía.                                |
+| **Aplicación recomendada**      | Terrenos difíciles, obstáculos, máxima tracción. | Pistas controladas, mayor maniobrabilidad y agilidad.                     |
 
-En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del BNO085, del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
+2. **INJORA 7KG 2065 Digital Micro Servo**
 
-En este apartado se inicializan los pines:
-```cpp
-void setup() {
-  Wire.begin(SDA_PIN, SCL_PIN);  // Inicializar I2C con pines específicos
-  esc.attach(PIN_ESC, 1000, 2000);
-  myservo.attach(PIN_SERVO);
-  Serial.begin(115200);
+El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para aplicaciones de robótica y modelismo a escala. A la hora de tener en cuenta tanto eficiencia como el manejo del espacio en un sistema embebido como el de un robot, el INJS2065 se destaca por sobre otros modelos. así como también destaca por su rápida velocidad de respuesta, alta precisión en el control de ángulo y considerable torque de retención. lo mencionado ut supra le permite operar eficientemente bajo diversas condiciones de carga. Su amplio rango de voltaje de operación, junto con un motor de núcleo y rodamientos de bolas, asegura durabilidad, flexibilidad y un funcionamiento suave, mientras que su tamaño reducido facilita su integración en diseños que requieren soluciones ligeras y confiables.
 
-  // Inicializar BNO085
-  if (!bno08x.begin_I2C(0x4B, &Wire)) {
-    Serial.println("¡No se pudo iniciar el BNO08x!");
-    while(1);
-  }
-  bno08x.enableReport(SH2_GYROSCOPE_CALIBRATED, 10000);
+[![IMG-1126-1200x1200.jpg](https://i.postimg.cc/52JgQgQr/IMG-1126-1200x1200.jpg)](https://postimg.cc/bs6kKQT0)
 
-  // Armar el ESC al iniciar
-  esc.write(90);
-  delay(3000);
-
-  tiempoAnterior = millis();
-}
-```
-
-En este apartado, se llama a la función `doceVueltas`, se hace una lectura de los sensores y se calibra el giroscopio:
-
-```cpp
-void loop() {
-  doceVueltas();
-}
-
-void doceVueltas() {
-  if (robotDetenido) {
-    // Robot detenido, no hacer nada más
-    return;
-  }
-
-  int frontal = USFront.read();
-  int izquierda = USLeft.read();
-  int derecha = USRight.read();
-
-  // Leer datos del giroscopio del BNO085 y acumular el ángulo girado en el eje Z
-  unsigned long tiempoActual = millis();
-  float deltaTime = (tiempoActual - tiempoAnterior) / 1000.0; // segundos
-  tiempoAnterior = tiempoActual;
-
-  if (bno08x.getSensorEvent(&sensorValue)) {
-    if (sensorValue.sensorId == SH2_GYROSCOPE_CALIBRATED) {
-      float gyroZ = sensorValue.un.gyroscope.z * 57.3; // Convertir a dps
-      anguloAcumuladoZ += gyroZ * deltaTime; // Acumula el ángulo en el eje Z (con signo)
-    }
-  }
-}
-```
-
-Dentro de `Open.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto.
-
-#### Diagramas de Flujo
-
-En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
-
-[![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
-
-#### Compiladores y Comunicacion
-
-- **Lenguaje principal:** C++ (Arduino IDE)
-- **Compilador:** [Arduino IDE](https://www.arduino.cc/en/software)
-- **Comunicación entre módulos:** Bus I2C y SPI
+| :wrench: **Especificaciones del Servo INJS2065** |                                                            |
+|:------------------------------------------------|:----------------------------------------------------------:|
+| **Banda muerta**                                | 2 μs                                                       |
+| **Posición neutral**                            | 1500 μs / 330 Hz                                           |
+| **Tipo de motor**                               | Motor de núcleo                                            |
+| **Ángulo control remoto**                       | 90-120° ±2°                                                |
+| **Ángulo (500-2500 μs)**                        | 180° ±2°                                                   |
+| **Rango de voltaje**                            | 4.8V - 8.4V                                                |
+| **Velocidad de operación (6.0V)**               | 0.09 s/60°                                                 |
+| **Velocidad de operación (8.4V)**               | 0.06 s/60°                                                 |
+| **Torque de retención (6.0V)**                  | 6.0 kg·cm / 83.3 oz·in                                     |
+| **Torque de retención (8.4V)**                  | 7.0 kg·cm / 97.2 oz·in                                     |
+| **Dimensiones**                                 | 23 × 13 × 25.8 mm                                          |
+| **Peso**                                        | 20 g                                                       |
+| **Longitud del cable conector**                 | JR 300 mm                                                  |
+| **Rodamientos**                                 | 1BB                                                        |
+| **Peso con empaque**                            | 28 g                                                       |
+| **Tamaño del paquete**                          | 36 × 23 × 38 mm                                            |
 
 ---
 
-## Recursos para Hacer el Robot
-
-### Mecánico
-- Diferenciales 1/28
-- Ejes de Transmisión 1/18
-- Motor Brushed Injora 180° 48T
-- Ruedas de Drift 1/18
-- Tuercas de Seguridad M2
-- Tornillos M3
-- Incertos Roscados M2
-- Nudillos de Cruce
-- Rolineras
-- Urgenex Li-Ion 3000mAh
-### Electrónico 
-- ESP-32
-- BNO085
-- Ultrasónicos HSR04
-### Programación 
-- Abierta.ino
-- Cerrada.ino
-- Pixytest.ino
+| :wrench: **Herramientas requeridas**            |                                                            |
+|:------------------------------------------------|:----------------------------------------------------------:|
+| 1 × Destornillador hexagonal 1.5 mm             |                                                            |
+| 1 × Destornillador hexagonal 2.0 mm             |                                                            |
 
 
+3. ### Motor DC 12V Greartisan zga37irg9i
 
-- [Lista de materiales detallada](./docs/lista-componentes.md)
-- [Archivos STL para impresión 3D](./3d/)
+[![61pi-8-J6q-L.jpg](https://i.postimg.cc/C5wWw8pB/61pi-8-J6q-L.jpg)](https://postimg.cc/LY0yTnX2)
 
----
 
-> _¿Quieres contribuir o seguir nuestro avance? Síguenos en nuestras redes oficiales y revisa este repositorio para novedades y recursos._
+Un Motor de Engranajes DC Greartisan es un tipo de motor eléctrico de corriente continua (DC) que tiene una caja de engranajes (también llamada reductora o caja reductora) integrada directamente en su construcción. La principal funcionalidad de este motor en un sistema robótico radica en su capacidad para ofrecer **alto par a velocidades reducidas**. A diferencia de un motor DC estándar que gira a muy altas RPM con poco par, el motor Greartisan integra una **caja de engranajes** (reductora) directamente en su diseño. Esta caja de engranajes transforma la velocidad de rotación del motor en una fuerza mucho mayor.
+ El **eje de salida céntrico de 1.45 pulgadas de diámetro** proporciona una conexión robusta y directa a los sistemas mecánicos del robot, como ruedas, brazos articulados o mecanismos de elevación, asegurando que el par generado se transmita de manera eficiente.
 
----
+> [!TIP]
+>  Evita los movimientos bruscos y difíciles de controlar de los motores de alta velocidad sin reducción.
+>     Aunque parezca contradictorio, al operar con una relación de engranajes adecuada, el motor puede trabajar más cerca de su punto de eficiencia óptima para la carga que está manejando, lo que puede resultar en un **menor consumo de energía** en comparación con un motor sin engranajes que lucha por alcanzar el par requerido.
+
+### Especificaciones del Motor
+
+| **Característica**                          | **Valor**                                         |
+|---------------------------------------------|---------------------------------------------------|
+| **Voltaje nominal**                         | 1
