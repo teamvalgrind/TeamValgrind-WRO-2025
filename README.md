@@ -5,24 +5,40 @@
 
 ---
 
-## Índice
+# Índice
 
-1. [Nuestro Equipo](#nuestro-equipo)
-    - [Integrantes](#integrantes)
-    - [Origenes](#origenes)
-    - [Nuestro Objetivo](#nuestro-objetivo)
-2. [El Robot](#el-robot)
-    - [Apartado Mecanico](#apartado-mecanico)
-        - [Impresion 3D](#impresion-3d)
-        - [Movilidad](#movilidad)
-    - [Apartado Electronico](#apartado-electronico)
-        - [Sensores](#sensores)
-        - [Conexiones y Circuitos](#conexiones-y-circuitos)
-        - [Microcontroladores](#microcontroladores)
-    - [Apartado Programatico](#apartado-programatico)
-        - [Codigo por Componente](#codigo-por-componente)
-4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
+- [Nuestro Equipo](#nuestro-equipo)
+  - [Integrantes](#integrantes)
+  - [Orígenes](#orígenes)
+  - [Nuestro Objetivo](#nuestro-objetivo)
 
+- [El Robot](#el-robot)
+  - [Apartado Mecánico](#apartado-mecánico)
+    - [Diseño 3D](#diseño-3d)
+    - [Movilidad](#movilidad)
+      - [Videos del Robot](#videos-del-robot)
+      - [Sistema de Movimiento y Tracción](#sistema-de-movimiento-y-tracción)
+      - [Piezas de Mecánica (servo, ejes de transmisión, diferenciales)](#piezas-de-mecánica-servo-ejes-de-transmisión-diferenciales)
+      - [Cálculo de la Reducción Total](#cálculo-de-la-reducción-total)
+  - [Apartado Electrónico](#apartado-electrónico)
+    - [Piezas de Electrónica](#piezas-de-electrónica)
+      - [Baterías](#baterías)
+      - [Step Down](#step-down)
+      - [Motor Driver](#motor-driver)
+      - [Ultrasonicos](#ultrasonicos)
+      - [PixyCam](#pixycam)
+      - [Microcontroladores](#microcontroladores)
+    - [Diagramas de Conexiones](#diagramas-de-conexiones)
+  - [Apartado de Programación](#apartado-de-programación)
+    - [Desafío Abierto](#desafío-abierto)
+      - [Flowchart](#flowchart)
+      - [Explicación del Código](#explicación-del-código)
+    - [Desafío Cerrado](#desafío-cerrado)
+      - [Flowchart](#flowchart-1)
+      - [Explicación del Código](#explicación-del-código-1)
+    - [Lista de Recursos para armar nuestro robot](#lista-de-recursos-para-armar-nuestro-robot)
+    - [Licencia](#licencia)
+      
 ---
 
 ## Nuestro Equipo
