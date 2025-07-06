@@ -11,7 +11,6 @@
   - [Integrantes](#integrantes)
   - [Orígenes](#orígenes)
   - [Nuestro Objetivo](#nuestro-objetivo)
-
 - [El Robot](#el-robot)
   - [Apartado Mecánico](#apartado-mecánico)
     - [Diseño 3D](#diseño-3d)
