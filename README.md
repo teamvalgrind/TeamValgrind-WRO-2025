@@ -88,7 +88,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 
 ---
 
-### Origenes
+### Orígenes
 
 El nombre de nuestro equipo fue decidido por los tres integrantes a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo de un dragón hecho con origami. El nombre "ValGrind" también hace referencia a la mitología nórdica debido a las legendarias Valquirias que habitan en este.
 
