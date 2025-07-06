@@ -7,37 +7,36 @@
 
 ## Índice
 
-- Nuestro Equipo
-	- Integrantes 
-	- Origenes 
-	- Nuestro Objetivo
-	
-- El Robot
-	- Apartado Mecanico
-		- Disenio 3D
-		- Movilidad
-			- Videos del Robot
-			- Sistema de Movimiento y Traccion
-			- Piezas de Mecanica (servo, ejes de transmision, diferenciales)
-			- Calculo de la Reduccion Total
-	- Apartado Electronico
-	        - Piezas de electronica
-	                - Baterias
-	                - Step Down
-	                - Motor Driver
-	                - Ultrasonicos
-	                - PixyCam
-	                - Microcontroladores
-	        - Diagramas de Conexiones
-	- Apartado de Programacion
-        	- Desafio Abierto
-        	        - Flowchart
-        	        - Explicacion del codigo
-        	- Desafio Cerrado
-        	        - Flowchart
-        	        - Explicacion del Codigo
-        	- Lista de Recursos para armar nuestro robot
-        	- Licencia
+- [Nuestro Equipo](#nuestro-equipo)
+    - [Integrantes](#integrantes)
+    - [Orígenes](#origenes)
+    - [Nuestro Objetivo](#nuestro-objetivo)
+- [El Robot](#el-robot)
+    - [Apartado Mecánico](#apartado-mecanico)
+        - [Diseño 3D](#impresion-3d)
+        - [Movilidad](#movilidad)
+            - [Videos del Robot](#videos-del-robot)
+            - [Sistema de Movimiento y Tracción](#sistema-de-movimiento-y-tracción)
+            - [Piezas de Mecánica (servo, ejes de transmisión, diferenciales)](#piezas-de-mecánica-servo-ejes-de-transmisión-diferenciales)
+            - [Cálculo de la Reducción Total](#cálculo-de-la-reducción-total)
+    - [Apartado Electrónico](#apartado-electronico)
+        - [Piezas de electrónica](#piezas-de-electronica)
+            - [Baterías](#baterías)
+            - [Step Down](#step-down)
+            - [Motor Driver](#motor-driver)
+            - [Ultrasónicos](#ultrasonicos)
+            - [PixyCam](#pixycam)
+            - [Microcontroladores](#microcontroladores)
+        - [Diagramas de Conexiones](#diagramas-de-conexiones)
+    - [Apartado de Programación](#apartado-de-programacion)
+        - [Desafío Abierto](#desafio-abierto)
+            - [Flowchart](#flowchart-desafio-abierto)
+            - [Explicación del código](#explicacion-del-codigo-desafio-abierto)
+        - [Desafío Cerrado](#desafio-cerrado)
+            - [Flowchart](#flowchart-desafio-cerrado)
+            - [Explicación del código](#explicacion-del-codigo-desafio-cerrado)
+        - [Lista de Recursos para armar nuestro robot](#lista-de-recursos-para-armar-nuestro-robot)
+        - [Licencia](#licencia)
 ---
 
 ## Nuestro Equipo
