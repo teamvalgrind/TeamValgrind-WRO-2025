@@ -9,7 +9,7 @@
 
 - [Nuestro Equipo](#nuestro-equipo)
   - [Integrantes](#integrantes)
-  - [Orígenes](#origenes)
+  - [Orígenes](#orígenes)
   - [Nuestro Objetivo](#nuestro-objetivo)
 - [El Robot](#el-robot)
   - [Apartado Mecánico](#apartado-mecánico)
