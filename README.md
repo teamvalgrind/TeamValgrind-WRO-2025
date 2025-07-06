@@ -7,22 +7,37 @@
 
 ## Índice
 
-1. [Nuestro Equipo](#nuestro-equipo)
-    - [Integrantes](#integrantes)
-    - [Origenes](#origenes)
-    - [Nuestro Objetivo](#nuestro-objetivo)
-2. [El Robot](#el-robot)
-    - [Apartado Mecanico](#apartado-mecanico)
-        - [Impresion 3D](#impresion-3d)
-        - [Movilidad](#movilidad)
-    - [Apartado Electronico](#apartado-electronico)
-        - [Sensores](#sensores)
-        - [Conexiones y Circuitos](#conexiones-y-circuitos)
-        - [Microcontroladores](#microcontroladores)
-    - [Apartado Programatico](#apartado-programatico)
-        - [Codigo por Componente](#codigo-por-componente)
-4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
-
+- Nuestro Equipo
+	- Integrantes 
+	- Origenes 
+	- Nuestro Objetivo
+	
+- El Robot
+	- Apartado Mecanico
+		- Disenio 3D
+		- Movilidad
+			- Videos del Robot
+			- Sistema de Movimiento y Traccion
+			- Piezas de Mecanica (servo, ejes de transmision, diferenciales)
+			- Calculo de la Reduccion Total
+	- Apartado Electronico
+	        - Piezas de electronica
+	                - Baterias
+	                - Step Down
+	                - Motor Driver
+	                - Ultrasonicos
+	                - PixyCam
+	                - Microcontroladores
+	        - Diagramas de Conexiones
+	- Apartado de Programacion
+        	- Desafio Abierto
+        	        - Flowchart
+        	        - Explicacion del codigo
+        	- Desafio Cerrado
+        	        - Flowchart
+        	        - Explicacion del Codigo
+        	- Lista de Recursos para armar nuestro robot
+        	- Licencia
 ---
 
 ## Nuestro Equipo
