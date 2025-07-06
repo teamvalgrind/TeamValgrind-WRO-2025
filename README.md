@@ -270,30 +270,37 @@ En el caso particular del robot Heimdall, originalmente se consideró una transm
 | **Consumo energético**          | Más elevado por la transmisión a cuatro ruedas. | Menor, lo que puede aumentar la autonomía.                                |
 | **Aplicación recomendada**      | Terrenos difíciles, obstáculos, máxima tracción. | Pistas controladas, mayor maniobrabilidad y agilidad.                     |
 
-2. **INJORA 7KG 2065 Digital Micro Servo**
+2. Claro, aquí tienes el texto actualizado para un servo **INJORA 2065 360°** (rotación continua), manteniendo el formato markdown y adaptando la descripción y tabla a este tipo de servo:
 
-El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para aplicaciones de robótica y modelismo a escala. A la hora de tener en cuenta tanto eficiencia como el manejo del espacio en un sistema embebido como el de un robot, el INJS2065 se destaca por sobre otros modelos. así como también destaca por su rápida velocidad de respuesta, alta precisión en el control de ángulo y considerable torque de retención. lo mencionado ut supra le permite operar eficientemente bajo diversas condiciones de carga. Su amplio rango de voltaje de operación, junto con un motor de núcleo y rodamientos de bolas, asegura durabilidad, flexibilidad y un funcionamiento suave, mientras que su tamaño reducido facilita su integración en diseños que requieren soluciones ligeras y confiables.
+---
+
+**INJORA 7KG 2065 Digital Micro Servo 360°**
+
+El servo INJS2065 360° es un micro servo digital compacto, de alto par y rotación continua, especialmente orientado a aplicaciones de robótica móvil, automatización y sistemas de tracción donde se requiere control de velocidad y dirección más que de posición angular fija. Gracias a su diseño robusto y eficiente, el servo 2065 360° es ideal para sistemas embebidos que demandan movimiento continuo, como robots seguidores de línea, plataformas móviles y mecanismos de accionamiento. Destaca por su alta precisión en el control de velocidad, rápida respuesta y una excelente relación peso-potencia, permitiendo así su integración en diseños ligeros y eficientes. Su motor de núcleo con rodamientos de bolas proporciona un funcionamiento suave y duradero, mientras que el amplio rango de voltaje soportado le otorga flexibilidad para diferentes sistemas de control.
 
 [![IMG-1126-1200x1200.jpg](https://i.postimg.cc/52JgQgQr/IMG-1126-1200x1200.jpg)](https://postimg.cc/bs6kKQT0)
 
-| :wrench: **Especificaciones del Servo INJS2065** |                                                            |
-|:------------------------------------------------|:----------------------------------------------------------:|
-| **Banda muerta**                                | 2 μs                                                       |
-| **Posición neutral**                            | 1500 μs / 330 Hz                                           |
-| **Tipo de motor**                               | Motor de núcleo                                            |
-| **Ángulo control remoto**                       | 90-120° ±2°                                                |
-| **Ángulo (500-2500 μs)**                        | 180° ±2°                                                   |
-| **Rango de voltaje**                            | 4.8V - 8.4V                                                |
-| **Velocidad de operación (6.0V)**               | 0.09 s/60°                                                 |
-| **Velocidad de operación (8.4V)**               | 0.06 s/60°                                                 |
-| **Torque de retención (6.0V)**                  | 6.0 kg·cm / 83.3 oz·in                                     |
-| **Torque de retención (8.4V)**                  | 7.0 kg·cm / 97.2 oz·in                                     |
-| **Dimensiones**                                 | 23 × 13 × 25.8 mm                                          |
-| **Peso**                                        | 20 g                                                       |
-| **Longitud del cable conector**                 | JR 300 mm                                                  |
-| **Rodamientos**                                 | 1BB                                                        |
-| **Peso con empaque**                            | 28 g                                                       |
-| **Tamaño del paquete**                          | 36 × 23 × 38 mm                                            |
+| :wrench: **Especificaciones del Servo INJS2065 360°** |                                                    |
+|:------------------------------------------------------|:--------------------------------------------------:|
+| **Tipo**                                              | Servo de rotación continua, digital                |
+| **Banda muerta**                                      | 2 μs                                               |
+| **Señal de control**                                  | PWM (500-2500 μs, 330 Hz)                         |
+| **Motor**                                             | Motor de núcleo                                    |
+| **Rango de voltaje**                                  | 4.8V - 8.4V                                        |
+| **Velocidad de operación (6.0V)**                     | 0.09 s/60° (aprox. 110 rpm)                        |
+| **Velocidad de operación (8.4V)**                     | 0.06 s/60° (aprox. 150 rpm)                        |
+| **Torque de retención (6.0V)**                        | 6.0 kg·cm / 83.3 oz·in                             |
+| **Torque de retención (8.4V)**                        | 7.0 kg·cm / 97.2 oz·in                             |
+| **Dimensiones**                                       | 23 × 13 × 25.8 mm                                  |
+| **Peso**                                              | 20 g                                               |
+| **Longitud del cable conector**                       | JR 300 mm                                          |
+| **Rodamientos**                                       | 1BB                                                |
+| **Peso con empaque**                                  | 28 g                                               |
+| **Tamaño del paquete**                                | 36 × 23 × 38 mm                                    |
+| **Modo de control**                                   | Velocidad y dirección según ancho de pulso PWM     |
+| **Posición neutra (detenido)**                        | ~1500 μs                                           |
+| **Giro horario**                                      | PWM > 1500 μs (más ancho, más rápido)              |
+| **Giro antihorario**                                  | PWM < 1500 μs (más estrecho, más rápido)           |
 
 ---
 
@@ -302,6 +309,7 @@ El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para ap
 | 1 × Destornillador hexagonal 1.5 mm             |                                                            |
 | 1 × Destornillador hexagonal 2.0 mm             |                                                            |
 
+---
 
 3. ### Motor DC 12V Greartisan zga37irg9i
 
