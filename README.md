@@ -29,6 +29,10 @@
             - [Microcontroladores](#microcontroladores)
         - [Diagramas de Conexiones](#diagramas-de-conexiones)
     - [Apartado de Programación](#apartado-de-programacion)
+        - Algoritmo de Navegacion
+              - ROS2 (explicacion integral)
+              - NAV2
+              - MAnejo de nodos, topicos, etc etc
         - [Desafío Abierto](#desafio-abierto)
             - [Flowchart](#flowchart-desafio-abierto)
             - [Explicación del código](#explicacion-del-codigo-desafio-abierto)
