@@ -9,15 +9,15 @@
 
 - [Nuestro Equipo](#nuestro-equipo)
   - [Integrantes](#integrantes)
-  - [Orígenes](#orígenes)
+  - [Origenes](#origenes)
   - [Nuestro Objetivo](#nuestro-objetivo)
 - [El Robot](#el-robot)
-  - [Apartado Mecánico](#apartado-mecánico)
+  - [Apartado Mecanico](#apartado-mecanico)
     - [Diseño 3D](#diseño-3d)
     - [Movilidad](#movilidad)
       - [Videos del Robot](#videos-del-robot)
-      - [Sistema de Movimiento y Tracción](#sistema-de-movimiento-y-tracción)
-      - [Piezas de Mecánica (servo, ejes de transmisión, diferenciales)](#piezas-de-mecánica-servo-ejes-de-transmisión-diferenciales)
+      - [Sistema de Movimiento y Traccion](#sistema-de-movimiento-y-tracción)
+      - [Piezas de Mecánica](#piezas-de-mecánica)
       - [Cálculo de la Reducción Total](#cálculo-de-la-reducción-total)
   - [Apartado Electrónico](#apartado-electrónico)
     - [Piezas de Electrónica](#piezas-de-electrónica)
@@ -28,12 +28,12 @@
       - [PixyCam](#pixycam)
       - [Microcontroladores](#microcontroladores)
     - [Diagramas de Conexiones](#diagramas-de-conexiones)
-  - [Apartado de Programación](#apartado-de-programación)
-    - [Desafío Abierto](#desafío-abierto)
-      - [Flowchart](#flowchart)
-      - [Explicación del Código](#explicación-del-código)
-    - [Desafío Cerrado](#desafío-cerrado)
-      - [Flowchart](#flowchart-1)
+  - [Apartado de Programacion](#apartado-de-programacion)
+    - [Desafio Abierto](#desafio-abierto)
+      - [Flowchart Abierta](#flowchart-abierta)
+      - [Explicacion del Codigo](#explicacion-del-codigo)
+    - [Desafio Cerrado](#desafio-cerrado)
+      - [Flowchart Cerrada](#flowchart-cerrada)
       - [Explicación del Código](#explicación-del-código-1)
     - [Lista de Recursos para armar nuestro robot](#lista-de-recursos-para-armar-nuestro-robot)
     - [Licencia](#licencia)
@@ -88,7 +88,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 
 ---
 
-### Orígenes
+### Origenes
 
 El nombre de nuestro equipo fue decidido por los tres integrantes a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo de un dragón hecho con origami. El nombre "ValGrind" también hace referencia a la mitología nórdica debido a las legendarias Valquirias que habitan en este.
 
@@ -121,7 +121,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 [![IMG-20250614-051714-898.jpg](https://i.postimg.cc/q7fZxFMX/IMG-20250614-051714-898.jpg)](https://postimg.cc/Yv33pbFh)
 
-### Apartado Mecánico 
+### Apartado Mecanico 
 
 | [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![IMG-20250614-045703-999.jpg](https://i.postimg.cc/fWFyC7mT/IMG-20250614-045703-999.jpg)](https://postimg.cc/NL6QfHdW)| 
 | :--: | :--: | 
@@ -161,7 +161,7 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 [![10a4.jpg](https://i.postimg.cc/K89xJC6v/10a4.jpg)](https://postimg.cc/G4sWpg3Z)
 
-####  Sistema de Movimiento y Tracción 
+####  Sistema de Movimiento y Traccion
 
 Ahondando en lo mencionado anteriormente, Heimdall utiliza lo que normalmente es denominado sistema ackermann positivo, el cual es un sistema derivado del principio de Ackermann, cuyo objetivo es lograr que en curvas la **rueda interior (θᵢ) gire más que la exterior (θₒ)** para minimizar deslizamiento lateral (*scrub*).  
 
