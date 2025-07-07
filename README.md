@@ -578,6 +578,33 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 #### Microcontroladores 
 
 ##### Raspberry Pi 5
+
+[![16gb.webp](https://i.postimg.cc/bNvyf03c/16gb.webp)](https://postimg.cc/xqWDKzwt)
+ 
+
+| **Parámetro**             | **Especificaciones**                            | **Puntos Relevantes**                                                |
+|---------------------------|-----------------------------------------------|---------------------------------------------------------------------|
+| **SoC**                   | Broadcom BCM2712 (64-bit)                     | Procesamiento avanzado para visión artificial y robótica integrada. |
+| **CPU**                   | Quad-core ARM Cortex-A76 @ 2.4 GHz            | Rendimiento 2-3× superior a Raspberry Pi 4 (multitarea crítica).   |
+| **GPU**                   | VideoCore VII (800 MHz)                       | Soporte OpenGL ES 3.1, 4Kp60 H.265 para procesamiento gráfico.     |
+| **RAM**                   | 4GB/8GB LPDDR4X-4267                          | Ancho de banda de 34.1 GB/s (ideal para IA/ML en edge).            |
+| **Conectividad**          | Wi-Fi 6 (802.11ax), BT 5.0, Gigabit Ethernet  | Baja latencia en redes; PoE+ vía HAT.                              |
+| **USB/Periféricos**       | 2× USB 3.0 (5 Gbps), 2× USB 2.0, PCIe 2.0 x1 | Conexión directa a cámaras, sensores y periféricos de alta velocidad. |
+| **Video**                 | 2× micro-HDMI (4K@60Hz dual)                  | Soporte para múltiples pantallas en sistemas de control.           |
+| **Alimentación**          | USB-C PD (5V/5A mínimo recomendado)           | Mayor demanda energética para periféricos integrados.              |
+| **GPIO**                  | 40 pines         | UART, SPI, I²C, PWM para motores/sensores (ej: Pixy2).             |
+| **Enfriamiento**          | Requiere disipador/ventilador activo          | Gestión térmica crítica bajo carga sostenida (overclocking: 3.0 GHz). |
+| **Consumo Máximo**        | ~12W (carga completa)                         | Necesidad de fuente dedicada (no alimentar por puerto PC estándar). |
+| **Interfaces Especiales** | CSI-2 (cámara), DSI (pantalla)                | Soporte nativo para módulos de cámara oficiales. |
+
+---
+
+### **Notas Clave para Robótica**  
+- **PCIe x1**: Permite conectar módulos NVMe (ej: SSD de 500 MB/s) para registro de datos en tiempo real.  
+- **GPIO Mejorado**: Soporte DMA para comunicación sensor-micro sin latencia.  
+- **Overclocking Estable**: Hasta 3.0 GHz en CPU con refrigeración activa (benchmarks: 2× RPi 4).  
+- **Compatibilidad Pixy2**: Conexión directa vía I²C/SPI para sistemas híbridos de visión.  
+- **Requerimiento Térmico**: Temperaturas >85°C activan throttling; crítico en drones/robots móviles.
 ##### Raspberry Pico
 
 #### Diagramas de Flujo
