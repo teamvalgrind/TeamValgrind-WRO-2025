@@ -20,8 +20,8 @@
       - [Piezas de Mecanica](#piezas-de-mecanica)
       - [Cálculo de la Reducción Total](#cálculo-de-la-reducción-total)
   - [Apartado Electronico](#apartado-electronico)
-    - [Piezas de Electrónica](#piezas-de-electrónica)
-      - [Baterías](#baterías)
+    - [Piezas de Electronica](#piezas-de-electronica)
+      - [Baterias](#baterias)
       - [Step Down](#step-down)
       - [Motor Driver](#motor-driver)
       - [Ultrasonicos](#ultrasonicos)
@@ -384,7 +384,7 @@ Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la veloci
 #### Piezas de Electronica
 Para el proyecto, decidimos usar;
 
-#### **Baterías**
+#### **Baterias**
 
 [![61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp](https://i.postimg.cc/G902qrBx/61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp)](https://postimg.cc/K3Nx86D1)
 
@@ -504,7 +504,7 @@ Usa un circuito **puente H (H-bridge)** interno:
 ---
 
 
-#### Sensores Ultrasónicos 
+#### Ultrasonicos 
 
 [![D-NQ-NP-986330-MLV79479843776-102024-O.webp](https://i.postimg.cc/J0w9gkPq/D-NQ-NP-986330-MLV79479843776-102024-O.webp)](https://postimg.cc/N94J25h9)
 
