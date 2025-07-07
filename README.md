@@ -40,7 +40,7 @@
       
 ---
 
-## Nuestro Equipo
+## _Nuestro Equipo_
 
 [![IMG-20250611-WA0013.jpg](https://i.postimg.cc/KvM5HgKW/IMG-20250611-WA0013.jpg)](https://postimg.cc/rKqWdsNG)
 
@@ -88,19 +88,19 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 
 ---
 
-### Origenes
+### _Origenes_
 
 El nombre de nuestro equipo fue decidido por los tres integrantes a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo de un dragón hecho con origami. El nombre "ValGrind" también hace referencia a la mitología nórdica debido a las legendarias Valquirias que habitan en este.
 
  [![images-18.jpg](https://i.postimg.cc/dQp02CyM/images-18.jpg)](https://postimg.cc/gryddns4)
 
 
-> ### ¿Por qué nuestro robot se llama Heimdall?
+> #### ¿Por qué nuestro robot se llama Heimdall?
 
 Este nombre no solo es un guiño a la mitología mencionada, sino que además corresponde al dios conocido como el guardián de las puertas de Asgard y del puente Bifröst, que conecta los Nueve Mundos. Al ser un personaje imponente, consideramos que es un nombre apropiado para representar a nuestro robot en la WRO.
 
 
-## Nuestro Objetivo
+### _Nuestro Objetivo_
 
 [![Logo-wro.png](https://i.postimg.cc/85CCHB4G/Logo-wro.png)](https://postimg.cc/t1LyR68v)
 
@@ -117,11 +117,11 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ---
 
-## El Robot
+## _El Robot_
 
 [![IMG-20250614-051714-898.jpg](https://i.postimg.cc/q7fZxFMX/IMG-20250614-051714-898.jpg)](https://postimg.cc/Yv33pbFh)
 
-### Apartado Mecanico 
+### _Apartado Mecanico_
 
 | [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![IMG-20250614-045703-999.jpg](https://i.postimg.cc/fWFyC7mT/IMG-20250614-045703-999.jpg)](https://postimg.cc/NL6QfHdW)| 
 | :--: | :--: | 
@@ -131,7 +131,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 |[![IMG-20250614-045724-391.jpg](https://i.postimg.cc/MHtDkPS4/IMG-20250614-045724-391.jpg)](https://postimg.cc/YLGgYxjf) |[![IMG-20250614-045706-621.jpg](https://i.postimg.cc/ZqZC3T38/IMG-20250614-045706-621.jpg)](https://postimg.cc/w1fqYYwM) |
 | *Superior* | *Inferior* |
 
-#### Impresion 3D 
+#### _Impresion 3D_
 
 Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante Fusion 360
 
@@ -141,11 +141,11 @@ Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay qu
 
 [![IMG-20250613-WA0053.jpg](https://i.postimg.cc/Pr5b7SVZ/IMG-20250613-WA0053.jpg)](https://postimg.cc/G96s8xCh)
 
-#### Movilidad
+#### _Movilidad_
 
 Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las piezas de nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
 
-#### Videos Del Robot
+#### _Videos Del Robot_
 
 > [!NOTE]
 > Video de Heimdall realizando el Open Challenge
@@ -163,7 +163,7 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 [![10a4.jpg](https://i.postimg.cc/K89xJC6v/10a4.jpg)](https://postimg.cc/G4sWpg3Z)
 
-####  Sistema de Movimiento y Traccion
+####  _Sistema de Movimiento y Traccion_
 
 Ahondando en lo mencionado anteriormente, Heimdall utiliza lo que normalmente es denominado sistema ackermann positivo, el cual es un sistema derivado del principio de Ackermann, cuyo objetivo es lograr que en curvas la **rueda interior (θᵢ) gire más que la exterior (θₒ)** para minimizar deslizamiento lateral (*scrub*).  
 
@@ -173,7 +173,7 @@ Ahondando en lo mencionado anteriormente, Heimdall utiliza lo que normalmente es
   - *L*: Distancia entre ejes  
   
 
-### **Implementación Física**
+#### **Implementación Física**
 ```asciidoc
 [Rueda exterior (θₒ)]
   │
@@ -230,7 +230,7 @@ flowchart LR
 
 ---
 
-##### Soluciones de Ingeniería
+##### _Soluciones de Ingeniería_
 -  **Estrategias Recomendadas**
 
 | **Componente**   | **Innovación**                                    | **Beneficio**                                  |
@@ -245,7 +245,7 @@ flowchart LR
 [![Ackermann-turning-svg.png](https://i.postimg.cc/CL08P93k/Ackermann-turning-svg.png)](https://postimg.cc/8syssXPz)
 
 
-### _Piezas de Mecanica_
+#### _Piezas de Mecanica_
 El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico de transmisión y tracción**, cuidadosamente seleccionado con componentes específicos de alta calidad. Vamos a desglosar cómo cada pieza encaja en este rompecabezas de ingeniería en miniatura, usando la escala **1/18** como referencia clave para tamaño e integración:
 
 1.  **Diferenciales y Ejes de Transmisión (1/18)**
