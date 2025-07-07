@@ -54,7 +54,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
   17 años, 09/01/2008
 
   > **Rol:** : **Programador**  
-> *Especialista en Python y arquitectura de soluciones complejas. Domina GitHub y PyCharm además de algoritmos complejos*.
+> *Especialista en Python. Domina GitHub y PyCharm además de algoritmos complejos*.
 > **Fun Fact:**  
 > *Su banda favorita es Foo Fighters* 
 
@@ -75,7 +75,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
    14 años, 14/07/2010
     
    > **Rol:**  **Programador**  
-> *Se encarga principalmente de C++, Arduino IDE, y algunos aspectos de la electrónica.*  
+> *Experto en C++, Arduino IDE, y el apartado Electrónico de nuestro robot*  
 > **Fun Fact:**  
 > *Una vez le pidió a Sebastián imprimir un Pokémon gigante de filamento*
  [![IMG-20250607-043532.jpg](https://i.postimg.cc/43XVFVRw/IMG-20250607-043532.jpg)](https://postimg.cc/WdfddD3J)
