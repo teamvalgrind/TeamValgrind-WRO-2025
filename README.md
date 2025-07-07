@@ -1,4 +1,4 @@
-
+a
 # Equipo [Team ValGrind]: WRO 2025
 
 [![SAVE-20250527-193558.jpg](https://i.postimg.cc/VvXNFbns/SAVE-20250527-193558.jpg)](https://postimg.cc/fSTZzy81)
@@ -599,12 +599,7 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 ---
 
-### **Notas Clave para Robótica**  
-- **PCIe x1**: Permite conectar módulos NVMe (ej: SSD de 500 MB/s) para registro de datos en tiempo real.  
-- **GPIO Mejorado**: Soporte DMA para comunicación sensor-micro sin latencia.  
-- **Overclocking Estable**: Hasta 3.0 GHz en CPU con refrigeración activa (benchmarks: 2× RPi 4).  
-- **Compatibilidad Pixy2**: Conexión directa vía I²C/SPI para sistemas híbridos de visión.  
-- **Requerimiento Térmico**: Temperaturas >85°C activan throttling; crítico en drones/robots móviles.
+
 ##### Raspberry Pico
 
 #### Diagramas de Flujo
