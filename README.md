@@ -19,7 +19,7 @@
       - [Sistema de Movimiento y Traccion](#sistema-de-movimiento-y-traccion)
       - [Piezas de Mecanica](#piezas-de-mecanica)
       - [Cálculo de la Reducción Total](#cálculo-de-la-reducción-total)
-  - [Apartado Electrónico](#apartado-electrónico)
+  - [Apartado Electronico](#apartado-electronico)
     - [Piezas de Electrónica](#piezas-de-electrónica)
       - [Baterías](#baterías)
       - [Step Down](#step-down)
@@ -379,7 +379,7 @@ Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la veloci
      
 ---
 
-### Apartado Electronico
+### _Apartado Electronico_
 
 Para el proyecto, decidimos usar;
 
