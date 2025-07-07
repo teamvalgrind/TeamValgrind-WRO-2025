@@ -145,6 +145,8 @@ Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay qu
 
 Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las piezas de nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
 
+#### Videos Del Robot
+
 > [!NOTE]
 > Video de Heimdall realizando el Open Challenge
 [Video](https://youtu.be/av_kJ_hcNXI?si=83bRdQo1FuN1ajur)
