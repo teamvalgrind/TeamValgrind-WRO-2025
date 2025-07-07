@@ -341,7 +341,7 @@ Un Motor de Engranajes DC Greartisan es un tipo de motor eléctrico de corriente
 | **Tamaño de la caja de cambios**            | 37 × 31 mm (1.46" × 1.22") (D × L)                |
 | **Tamaño del motor**                        | 36.2 × 33.3 mm (1.43" × 1.31") (D × L)            |
 
-### Cálculo de la reducción total
+#### Calculo de la reduccion total
 
 Para adaptar la salida del motor a las necesidades del robot, realizamos un cálculo de la reducción total combinando la reducción interna del motor con la de un sistema de engranajes externo. Utilizamos un piñón de ataque estándar (acoplado al eje del motor) y engranajes de 17 y 28 dientes.
 
@@ -358,7 +358,7 @@ Reducción total = Reducción interna del motor × (dientes engranaje grande / d
 Con el Piñón de lego de 36 dientes acomplado a nuestro motor, transmitiendo su fuerza de rotación al Piñon de 16 dientes obtenemos un aumento de 2.11 veces la velocidad original del motor (550 rpm) obteniendo así 1164.7 rpm, siendo reducidos por el Piñón de ataque a una reducción de 1:2.24 
 Dando un total de 521 rpm las cuales se transmiten directamente a los ejes de transmisión conectados a las ruedas
 
-### ¿Por qué es importante la reducción?
+#### ¿Por qué es importante la reducción?
 
 Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la velocidad de salida disminuye, permitiendo un control más preciso del robot, y paralelamente  La reducción aumenta el torque disponible en las ruedas, lo que mejora la capacidad de mover el robot o superar obstáculos.
 
@@ -381,6 +381,7 @@ Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la veloci
 
 ### _Apartado Electronico_
 
+#### Piezas de Electronica
 Para el proyecto, decidimos usar;
 
 #### **Baterías**
@@ -413,7 +414,7 @@ Para el proyecto, decidimos usar;
 | Fabricante                              | Tenergy                                   |
 
 
-### **LM2596**
+### **Step Down**
 
 [![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
 
@@ -454,7 +455,7 @@ El LM2596 sigue una topología **buck clásica** con cuatro componentes clave:
 
 ---
 
-#### Driver L298N
+#### Motor Driver
 
 [![AR0203-L298n-v3.jpg](https://i.postimg.cc/KzGxcjTW/AR0203-L298n-v3.jpg)](https://postimg.cc/Jy29P1P3)
 
@@ -531,7 +532,7 @@ Usa un circuito **puente H (H-bridge)** interno:
 | **Compensación térmica**    | No                           | Sí (sensor interno)          | Mediciones estables con cambios de temperatura.     |
 | **Dimensiones**             | 45×20×15 mm                  | 41×21×16 mm                  | Integración en espacios reducidos (mini-robots, drones). |
 
-#### Pixy2
+#### PixyCam
 
 [![D-NQ-NP-783616-MLV52840552796-122022-O.webp](https://i.postimg.cc/cHHvF0mV/D-NQ-NP-783616-MLV52840552796-122022-O.webp)](https://postimg.cc/p9wVTN3Z)
 
@@ -573,6 +574,11 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 4. **Pruebas en tiempo real**:  
    - Active `Frame view` en PixyMon para ver detecciones superpuestas (objetos = rectángulos, líneas = vectores).  
    - Ajuste `Min/max area` para filtrar objetos por tamaño (evitar ruido).   
+
+#### Microcontroladores 
+
+##### Raspberry Pi 5
+##### Raspberry Pico
 
 #### Diagramas de Flujo
 
