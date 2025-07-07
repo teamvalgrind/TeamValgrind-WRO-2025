@@ -581,7 +581,6 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 [![16gb.webp](https://i.postimg.cc/bNvyf03c/16gb.webp)](https://postimg.cc/xqWDKzwt)
 
-
 _La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepcional poder de procesamiento, que permite coordinar simultáneamente todos los subsistemas críticos. Su CPU quad-core Cortex-A76 a 2.4 GHz (ampliable a 3.0 GHz) y el elevado ancho de banda de memoria (34.1 GB/s) ofrecen la capacidad necesaria para gestionar la visión artificial de la Pixy2 mediante interfaces de baja latencia (SPI/I²C), supervisar los módulos de control embebidos en la Raspberry Pi Pico, y ejecutar en tiempo real algoritmos complejos de navegación (en este caso, ROS y SLAM) basados en datos LiDAR. Al ser el microcontrolador encargado de gestionar datos de todos los sensores, y de mandar comandos hacia la Raspberry Pico, en esencia es la encargada de centralizar los procesos y la jerarquía de componentes._
 
 
@@ -601,7 +600,7 @@ _La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepciona
 | **Interfaces Especiales** | CSI-2 (cámara), DSI (pantalla)                | Soporte nativo para módulos de cámara oficiales. |
 
 > [!NOTE]
-> 
+> Ubuntu 24.04, ROS
 
 ---
 
