@@ -102,6 +102,7 @@ El nombre de nuestro equipo fue decidido por los tres integrantes a partir de un
 
 Este nombre no solo es un guiño a la mitología mencionada, sino que además corresponde al dios conocido como el guardián de las puertas de Asgard y del puente Bifröst, que conecta los Nueve Mundos. Al ser un personaje imponente, consideramos que es un nombre apropiado para representar a nuestro robot en la WRO.
 
+---  
 
 ### _Nuestro Objetivo_
 
@@ -600,13 +601,14 @@ _La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepciona
 > [!NOTE]
 > Ubuntu 24.04, ROS
 
----
-
-##### Raspberry Pico
-
+##### Raspberry Pi Pico
 
 ---
 
+### Diagrama de Conexiones
+
+
+---
 ### Apartado de Programacion
 
 ##### Flowchart Abierta
