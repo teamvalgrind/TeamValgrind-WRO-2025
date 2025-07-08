@@ -29,7 +29,7 @@
     - [Microcontroladores](#microcontroladores)
        - [Raspberry Pi 5](#raspberry-pi-5)
        - [Raspberry Pi Pico](#raspberry-pi-pico)
-       - [Diagramas de Conexiones] (#diagramas-de-conexiones)
+       - [Diagrama de Conexiones](#diagrama-de-conexiones)
   - [Apartado de Programacion](#apartado-de-programacion)
    - [Algoritmo de Navegacion](#algoritmo-de-navegacion)
     - [Desafio Abierto](#desafio-abierto)
