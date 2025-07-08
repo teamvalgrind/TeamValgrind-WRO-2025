@@ -31,13 +31,13 @@
        - [Raspberry Pi Pico](#raspberry-pi-pico)
        - [Diagrama de Conexiones](#diagrama-de-conexiones)
   - [Apartado de Programacion](#apartado-de-programacion)
-   - [Algoritmo de Navegacion](#algoritmo-de-navegacion)
-    - [Desafio Abierto](#desafio-abierto)
-      - [Flowchart Abierta](#flowchart-abierta)
-      - [Explicacion del Codigo](#explicacion-del-codigo)
-    - [Desafio Cerrado](#desafio-cerrado)
-      - [Flowchart Cerrada](#flowchart-cerrada)
-      - [Explicación del Código](#explicación-del-código-1)
+    - [Algoritmo de Navegacion](#algoritmo-de-navegacion)
+     - [Desafio Abierto](#desafio-abierto)
+       - [Flowchart Abierta](#flowchart-abierta)
+       - [Explicacion del Codigo](#explicacion-del-codigo)
+     - [Desafio Cerrado](#desafio-cerrado)
+       - [Flowchart Cerrada](#flowchart-cerrada)
+       - [Explicación del Código](#explicación-del-código-1)
     - [Lista de Recursos para armar nuestro robot](#lista-de-recursos-para-armar-nuestro-robot)
     - [Licencia](#licencia)
       
@@ -610,6 +610,12 @@ _La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepciona
 
 ---
 ### Apartado de Programacion
+
+#### Algoritmo de Navegación 
+
+ROS2, Ubuntu, dependencias, ROS.ORG
+Instalar Nav2
+Rviz, costmaps, etc
 
 ##### Flowchart Abierta
 
