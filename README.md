@@ -18,7 +18,7 @@
       - [Videos del Robot](#videos-del-robot)
       - [Sistema de Movimiento y Traccion](#sistema-de-movimiento-y-traccion)
       - [Piezas de Mecanica](#piezas-de-mecanica)
-      - [Calculo de la Reduccion Total](#cálculo-de-la-reducción-total)
+      - [Calculo de la Reduccion Total](#calculo-de-la-reducción-total)
   - [Apartado Electronico](#apartado-electronico)
     - [Piezas de Electronica](#piezas-de-electronica)
        - [Baterias](#baterias)
@@ -504,33 +504,28 @@ Usa un circuito **puente H (H-bridge)** interno:
 ---
 
 
-#### Ultrasonicos 
+#### LiDar
 
-[![D-NQ-NP-986330-MLV79479843776-102024-O.webp](https://i.postimg.cc/J0w9gkPq/D-NQ-NP-986330-MLV79479843776-102024-O.webp)](https://postimg.cc/N94J25h9)
+[![60ef441317-1.png](https://i.postimg.cc/2SXNHqvx/60ef441317-1.png)](https://postimg.cc/w1JrMjwt)
 
-##### El robot cuenta con múltiples sensores ultrasónicos (HC-SR04) ubicados estratégicamente para la detección de obstáculos y el cálculo de distancias, permitiendo navegación autónoma y segura. El sensor HC-SR04 es un sensor de distancia de bajo costo, por lo que su uso es muy frecuente en la robótica. Incorpora un par de transductores de ultrasonido que se utilizan de manera conjunta para determinar la distancia del sensor con un objeto colocado frente a este. Un transductor emite una ráfaga de ultrasonido y el otro capta el rebote de dicha onda.
+##### El robot cuenta con un sensor SLAMTEC RPLIDAR C1 
 
-> [!NOTE]
-> El tiempo que tarda la onda sonora en ir y regresar a un objeto puede utilizarse para conocer la distancia entre el origen del sonido y el objeto. La interfaz del sensor HC-SR04 y Arduino se logra mediante 2 pines digitales: el pin de disparo (trigger) y el pin de eco (echo). La función de cada uno de estos pines es la siguiente:
-- El pin trigger recibe un pulso de habilitación del microcontrolador, mediante el cual se le indica al módulo que comience a realizar la medición de distancia.
-- En el pin echo el sensor devuelve al microcontrolador un pulso cuyo ancho es proporcional al tiempo que tarda el sonido en viajar del transductor al obstáculo y luego de vuelta al módulo
 
-- ### ** Cuadro Técnico**  
+### **Cuadro de Datos Técnicos**  
+| **Parámetro**             | **Slamtec RPLIDAR C1**                          | **Puntos Relevantes**                                                |     |
+| ------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- | --- |
+| **Tecnología**            | Láser infrarrojo (Clase 1)                      | Seguro para entornos con personas, bajo riesgo ocular.              |     |
+| **Rango de medición**     | 0.1 - 12 metros                                 | Cobertura amplia para interiores y espacios medianos.                |     |
+| **Resolución angular**    | ≤ 1°                                            | Precisión en detección de obstáculos y generación de mapas.          |     |
+| **Frecuencia de muestreo**| 2000 puntos/segundo                             | Escaneo rápido para navegación en tiempo real.                       |     |
+| **Interfaces**            | USB 2.0, UART, GPIO                             | Integración sencilla con ROS, Arduino, Raspberry Pi y PLCs.          |     |
+| **Consumo**               | 450 mA @ 5V (típico)                            | Eficiente para robots móviles con batería limitada.                  |     |
+| **Aplicaciones clave**    | SLAM, Navegación autónoma, Mapeo 2D             | Ideal para robots de servicio, aspiradoras inteligentes y AGVs.      |     |
+| **Dimensiones/Peso**      | Ø 71.5 × 43.5 mm / 100 g                        | Compacto para montaje en plataformas móviles pequeñas.               |     |
 
-| **Parámetro**               | **HC-SR04** (Estándar)       | **US-100** (Avanzado)        | **Importancia en Robótica**                          |
-|-----------------------------|------------------------------|------------------------------|------------------------------------------------------|
-| **Voltaje operación**       | 5 V DC                       | 2.4–5.5 V DC                 | Compatibilidad con microcontroladores (3.3V/5V).    |
-| **Consumo (standby)**       | 2 mA                         | 2 mA                         | Eficiencia energética en robots autónomos.          |
-| **Rango de detección**      | 2 cm – 400 cm                | 2 cm – 450 cm                | Evitar colisiones (obstáculos cercanos/lejanos).     |
-| **Resolución**              | 0.3 cm                       | 0.1 cm                       | Precisión en navegación de precisión (ej: laberintos). |
-| **Ángulo del haz**          | 15°                          | 15° (ajustable a 5° con tubo)| Enfoque en objetivos específicos, reduce falsos positivos. |
-| **Frecuencia operativa**    | 40 kHz                       | 42 kHz                       | Minimiza interferencias con otros sensores acústicos. |
-| **Tiempo respuesta**        | ≤ 50 ms                      | ≤ 30 ms                      | Reacción rápida en robots de alta velocidad (ej: FRC). |
-| **Interfaz de salida**      | Digital (pulso)              | UART/TTL o Digital           | Flexibilidad para Arduino, Raspberry Pi, o SBCs.    |
-| **Precisión**               | ±3 mm (2–100 cm), ±5% (>100 cm) | ±2 mm (2–300 cm)           | Crítico para mapeo de entornos (SLAM).              |
-| **Temperatura operativa**   | -15°C a +70°C                | -25°C a +85°C                | Funcionamiento en entornos extremos (exteriores/industriales). |
-| **Compensación térmica**    | No                           | Sí (sensor interno)          | Mediciones estables con cambios de temperatura.     |
-| **Dimensiones**             | 45×20×15 mm                  | 41×21×16 mm                  | Integración en espacios reducidos (mini-robots, drones). |
+/SLAM
+/RVIZ2
+
 
 #### PixyCam
 
@@ -540,7 +535,7 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 ---
 
-### ** Cuadro de Datos Técnicos Clave**  
+### ** Cuadro de Datos Técnicos**  
 | **Parámetro**             | **Pixy2 CMUcam5**                               | **Puntos Relevantes**                                                |     |
 | ------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- | --- |
 | **Sensor**                | Sony IMX322 (1/4")                              | Captura 60 FPS en baja luz (torneos indoor/outdoor).                 |     |
