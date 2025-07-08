@@ -18,7 +18,7 @@
       - [Videos del Robot](#videos-del-robot)
       - [Sistema de Movimiento y Traccion](#sistema-de-movimiento-y-traccion)
       - [Piezas de Mecanica](#piezas-de-mecanica)
-      - [Cálculo de la Reducción Total](#cálculo-de-la-reducción-total)
+      - [Calculo de la Reduccion Total](#cálculo-de-la-reducción-total)
   - [Apartado Electronico](#apartado-electronico)
     - [Piezas de Electronica](#piezas-de-electronica)
        - [Baterias](#baterias)
@@ -341,7 +341,7 @@ Un Motor de Engranajes DC Greartisan es un tipo de motor eléctrico de corriente
 | **Tamaño de la caja de cambios**            | 37 × 31 mm (1.46" × 1.22") (D × L)                |
 | **Tamaño del motor**                        | 36.2 × 33.3 mm (1.43" × 1.31") (D × L)            |
 
-#### Calculo de la reduccion total
+#### _Calculo de la Reduccion total_
 
 Para adaptar la salida del motor a las necesidades del robot, realizamos un cálculo de la reducción total combinando la reducción interna del motor con la de un sistema de engranajes externo. Utilizamos un piñón de ataque estándar (acoplado al eje del motor) y engranajes de 17 y 28 dientes.
 
@@ -381,7 +381,7 @@ Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la veloci
 
 ### _Apartado Electronico_
 
-#### Piezas de Electronica
+#### _Piezas de Electronica_
 Para el proyecto, decidimos usar;
 
 #### **Baterias**
