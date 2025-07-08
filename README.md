@@ -29,8 +29,9 @@
     - [Microcontroladores](#microcontroladores)
        - [Raspberry Pi 5](#raspberry-pi-5)
        - [Raspberry Pi Pico](#raspberry-pi-pico)
-       - [Diagramas de Conexiones (#diagramas-de-conexiones)
+       - [Diagramas de Conexiones] (#diagramas-de-conexiones)
   - [Apartado de Programacion](#apartado-de-programacion)
+   - [Algoritmo de Navegacion](#algoritmo-de-navegacion)
     - [Desafio Abierto](#desafio-abierto)
       - [Flowchart Abierta](#flowchart-abierta)
       - [Explicacion del Codigo](#explicacion-del-codigo)
@@ -601,14 +602,16 @@ _La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepciona
 
 ---
 
-
 ##### Raspberry Pico
 
-#### Diagramas de Flujo
 
-##### En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
+---
 
-##### Desafío Abierto
+### Apartado de Programacion
+
+##### Flowchart Abierta
+
+En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
 
 ```mermaid
 flowchart LR
@@ -631,38 +634,7 @@ flowchart LR
     M -- No --> I
 ```
 
-##### Desafío Cerrado
-
-```mermaid
-flowchart LR
-    A([Inicio]) --> B([void setup])
-    B --> C{¿Botón presionado?}
-    C -- No --> C
-    C -- Sí --> D([programaIniciado = true])
-    D --> E([void loop])
-    E --> F{¿finalizado?}
-    F -- Sí --> G([Termina])
-    F -- No --> H([doceGiros])
-    H --> I[Lectura sensores]
-    I --> J{¿Pixy2 detecta bloques?}
-    J -- Sí --> K([goToPosition])
-    J -- No --> L{¿Obstáculo al frente?}
-    L -- No --> M{¿Espacio libre?}
-    M -- Sí --> N[Girar o avanzar]
-    M -- No --> O[Parar]
-    L -- Sí --> O
-    K --> G
-    N --> G
-    O --> G
-```
-
-#### Código por Componente
-
-##### Desafío Abierto
-
-El código desarrollado para el robot Heimdall en la categoría Futuros Ingenieros de la WRO 2025 está estructurado para automatizar las acciones del robot en la pista, desde la inicialización hasta la finalización de su recorrido. 
-
- A continuación, se describe a lujo de detalle y con ejemplos de código cada parte fundamental de este sistema.
+##### Explicacion del Codigo
 
 Para empezar, se definen los pines y las constantes necesarias para la operación del hardware. Los sensores ultrasónicos se conectan a diferentes pines del ESP32, y se prepara el control del motor y del servo. También se establecen los umbrales de distancia y tiempos que serán usados para la lógica de navegación.
 
@@ -848,6 +820,35 @@ void Derecha() {
 En resumen, este sistema permite que el robot navegue autónomamente por la pista, tome decisiones en tiempo real basadas en la información de los sensores, y complete el reto de realizar 12 giros antes de detenerse automáticamente. Se decidió usar funciones auxiliares para poder crear un "ecosistema" de herramientas que nos permitieran manejar el comportamiento y preferencias del robot de tal forma que su desempeño en la pista sea fácilmente optimizable. Esto también ocurre dentro del Desafío Cerrado
 
 ##### Desafío Cerrado
+
+##### Flowchart Cerrada
+
+En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
+
+```mermaid
+flowchart LR
+    A([Inicio]) --> B([void setup])
+    B --> C{¿Botón presionado?}
+    C -- No --> C
+    C -- Sí --> D([programaIniciado = true])
+    D --> E([void loop])
+    E --> F{¿finalizado?}
+    F -- Sí --> G([Termina])
+    F -- No --> H([doceGiros])
+    H --> I[Lectura sensores]
+    I --> J{¿Pixy2 detecta bloques?}
+    J -- Sí --> K([goToPosition])
+    J -- No --> L{¿Obstáculo al frente?}
+    L -- No --> M{¿Espacio libre?}
+    M -- Sí --> N[Girar o avanzar]
+    M -- No --> O[Parar]
+    L -- Sí --> O
+    K --> G
+    N --> G
+    O --> G
+```
+
+##### Explicacion del Código
 
 La lógica de programación del Desafío Cerrado se basa principalmente en la integración y procesamiento de la información proporcionada por la cámara Pixy2, junto con la interpretación de datos de sensores ultrasónicos y la reacción coordinada de los motores y el servo de dirección. El objetivo es que el robot detecte colores específicos en la pista (por ejemplo, bloques verdes o rojos), interprete su posición y tome decisiones inteligentes y adaptativas para sortear obstáculos o ejecutar maniobras según el contexto de la competencia.
 
@@ -1050,13 +1051,13 @@ void detectarBloque(uint8_t color, int x) {
 
 ---
 
-Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto y cerrado.
+Dentro de `Closed-Challenge.py` y `Open-challenge.py` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto y cerrado.
 
 #### Compiladores y Comunicacion
 
-- **Lenguaje principal:** C++ (Arduino IDE)
-- **Compilador:** [Arduino IDE](https://www.arduino.cc/en/software- **Comunicación entre módulos:** Bus I2C
-
+- **Lenguaje principal:** Python (RCLPY)
+- **Compilador:** PyCharm and ROS (Robot Operated System) 
+- **Comunicación:** USB, Serial Communication, y el servicio de comunicación de ROS 
 ---
 
 ## Recursos para Hacer el Robot
