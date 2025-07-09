@@ -530,6 +530,8 @@ Usa un circuito **puente H (H-bridge)** interno:
 /SLAM
 /RVIZ2
 
+[![Screenshot-from-2025-07-08-20-51-40.png](https://i.postimg.cc/MGmB18gV/Screenshot-from-2025-07-08-20-51-40.png)](https://postimg.cc/5HjjMD42)
+
 
 #### PixyCam
 
