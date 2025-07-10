@@ -540,7 +540,7 @@ SLAM (Simultaneous Localization and Mapping, o Localización y Mapeo Simultáneo
 > Los objetos (bloques) aparecen como lineas  dentro del área blanca.
     Las esquinas se detectan como puntos donde dos paredes se encuentran en ángulo recto.
 
-Este método de mapeo se hace mediante ROS2 (Robot Operated System), en donde se puede visualizar gráficamente la detección láser del LiDar así como los datos que recoge periódicamente
+Este método de mapeo se hace mediante ROS2 (Robot Operated System) en donde se puede visualizar gráficamente la detección láser del LiDar así como los datos que recoge periódicamente. Para más información de como se manejan componentes con 'Ros' ver el apartado de [Algoritmo de Navegacion](#algoritmo-de-navegacion)
 
 #### ¿Cómo se pueden visualizar estos datos dentro de ROS?
 
