@@ -512,8 +512,10 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 [![60ef441317-1.png](https://i.postimg.cc/2SXNHqvx/60ef441317-1.png)](https://postimg.cc/w1JrMjwt)
 
-##### El robot cuenta con un sensor SLAMTEC RPLIDAR C1 
+##### El robot cuenta con un sensor SLAMTEC RPLIDAR C1, el cual es un sensor 360° que utiliza una tecnología DTOF (Direct Time of Flight) tipo fusión, con un alcance de escaneo hasta 12 metros y una zona ciega tan baja como 0.05 metros. La frecuencia con la que actualiza su muestreo son 5000 muestras por segundo, y la precisión con la que detecta objetos es milimétrica, haciéndolo imprescindible para poder detectar detalles tanto pequeños como cercanos.
 
+Su resistencia a interferencias, alta definición, silencioso y compacto diseño entre otras cosas lo hicieron nuestra primera opción como el sensor responsable de localizar y mapear simultáneamente el entorno en donde se encuentra el robot (La pista de la WRO)
+ 
 
 ### **Cuadro de Datos Técnicos**  
 | **Parámetro**             | **Slamtec RPLIDAR C1**                          | **Puntos Relevantes**                                                |     |
@@ -527,10 +529,37 @@ Usa un circuito **puente H (H-bridge)** interno:
 | **Aplicaciones clave**    | SLAM, Navegación autónoma, Mapeo 2D             | Ideal para robots de servicio, aspiradoras inteligentes y AGVs.      |     |
 | **Dimensiones/Peso**      | Ø 71.5 × 43.5 mm / 100 g                        | Compacto para montaje en plataformas móviles pequeñas.               |     |
 
-/SLAM
-/RVIZ2
+#### Utilización de SLAM
 
+Foto de Gazebo
 
+SLAM (Simultaneous Localization and Mapping, o Localización y Mapeo Simultáneos) es una técnica utilizada en robótica que permite a un robot o dispositivo móvil ubicarse dentro de un entorno desconocido mientras construye un mapa del mismo al mismo tiempo, sin necesidad de GPS. Es imprescindible para armar un robot de la WRO, ya que sin poder localizarse a su mismo comparado a su entorno (qué tan lejos está de un obstáculo, pared, etc) es prácticamente imposible realizar rutinas de navegación o algoritmos/scripts que completen el desafío abierto o el cerrado. Entonces, partiendo de este fundamental concepto:
+
+- **El LiDAR** y el algoritmo SLAM (GMapping, Hector SLAM, Cartographer, etc.) crean un mapa de ocupación del entorno, en el mapa lasp paredes se ven como líneas continuas.
+ 
+> Los objetos (bloques) aparecen como lineas  dentro del área blanca.
+    Las esquinas se detectan como puntos donde dos paredes se encuentran en ángulo recto.
+
+Este método de mapeo se hace mediante ROS2 (Robot Operated System), en donde se puede visualizar gráficamente la detección láser del LiDar así como los datos que recoge periódicamente
+
+#### ¿Cómo se pueden visualizar estos datos dentro de ROS?
+
+foto de RVIZ2
+
+##### RVIZ2 
+**Rviz2** es una herramienta gráfica de visualización en 3D diseñada para el sistema operativo de robots ROS 2 (Robot Operating System 2). Permite a los usuarios ver en tiempo real el estado del robot, datos de sensores, mapas, modelos 3D y trayectorias planificadas. Es decir, es una interfaz gráfica integrada (GUI) a ROS2 que es perfectamente compatible con nuestro LiDar. 
+
+Características principales de Rviz2:
+
+- **Visualización 3D**: Muestra representaciones tridimensionales del entorno y del robot.
+- **Interfaz personalizable**: Permite agregar o quitar paneles y visualizaciones según las necesidades.
+- **Soporte de plugins**: Extiende su funcionalidad con diversos complementos para diferentes tipos de datos.
+- **Compatibilidad multiplataforma**: Funciona en Linux, macOS y Windows.
+- Se instala por defecto con ROS 2 y requiere un entorno de escritorio para su ejecución (no puede correr en robots con solo sistema servidor sin interfaz gráfica)
+
+Ahora, hay que tener en cuenta que Rviz2 es la herramienta predilecta para el "debugging" de los proyectos de ROS2 ya que se puede visualizar gráficamente qué datos está arrojando uno o varios sensores, en este caso, nos permite ver exactamente qué está detectando el LiDar y a qué velocidad. También posee varios parámetros para afectar la recolección de datos y aumentar su eficiencia 
+
+Foto
 
 #### PixyCam
 
