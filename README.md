@@ -641,7 +641,7 @@ _La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepciona
 ---
 ### Apartado de Programacion
 
-#### Algoritmo de Navegación 
+#### Algoritmo de Navegacion
 
 ROS2, Ubuntu, dependencias, ROS.ORG
 Instalar Nav2
