@@ -1,4 +1,4 @@
-
+# Robot en desarollo, planes para integrar un sistema de control externo de navegacion autonoma
 # Equipo [Team ValGrind]: WRO 2025
 
 [![SAVE-20250527-193558.jpg](https://i.postimg.cc/VvXNFbns/SAVE-20250527-193558.jpg)](https://postimg.cc/fSTZzy81)
@@ -127,12 +127,12 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ### _Apartado Mecanico_
 
-| [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![IMG-20250614-045703-999.jpg](https://i.postimg.cc/fWFyC7mT/IMG-20250614-045703-999.jpg)](https://postimg.cc/NL6QfHdW)| 
+| [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![unnamed2.jpg](https://i.postimg.cc/ncMMwr9f/unnamed2.jpg)](https://postimg.cc/Mv2WnWY9)| 
 | :--: | :--: | 
 | *Frontal* | *Posterior* |
-|[![IMG-20250614-045741-494.jpg](https://i.postimg.cc/MGPf8CM1/IMG-20250614-045741-494.jpg)](https://postimg.cc/B8FnTwCv) | [![IMG-20250614-045718-999.jpg](https://i.postimg.cc/wTmvGtQ5/IMG-20250614-045718-999.jpg)](https://postimg.cc/YhtM4CVj)| 
+|[![lateralizq.jpg](https://i.postimg.cc/y8vQ6fYZ/lateralizq.jpg)](https://postimg.cc/pm5YqJjW) | [![unnamed.jpg](https://i.postimg.cc/Z5M8DX5V/unnamed.jpg)](https://postimg.cc/rD5RDnWr)| 
 | *Izquierda* | *Derecha* |
-|[![IMG-20250614-045724-391.jpg](https://i.postimg.cc/MHtDkPS4/IMG-20250614-045724-391.jpg)](https://postimg.cc/YLGgYxjf) |[![IMG-20250614-045706-621.jpg](https://i.postimg.cc/ZqZC3T38/IMG-20250614-045706-621.jpg)](https://postimg.cc/w1fqYYwM) |
+|[![unnamed4.jpg](https://i.postimg.cc/0NvkxyjQ/unnamed4.jpg)](https://postimg.cc/cvDyBZQy) | [![1000567564.jpg](https://i.postimg.cc/MTNZCbQk/1000567564.jpg)](https://postimg.cc/njKt7m2T) |
 | *Superior* | *Inferior* |
 
 #### _Impresion 3D_
