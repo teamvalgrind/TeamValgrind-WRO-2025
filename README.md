@@ -757,6 +757,8 @@ En resumen, este sistema permite que el robot navegue autónomamente por la pist
 
 ##### Flowchart Cerrada
 
+[![Flowchart-Cerrada.jpg](https://i.postimg.cc/SRhnrkkY/Flowchart-Cerrada.jpg)](https://postimg.cc/ft8WW43M)
+
 En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
 
 ```mermaid
