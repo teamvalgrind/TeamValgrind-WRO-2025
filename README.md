@@ -566,26 +566,7 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
 
-```mermaid
-flowchart LR
-    A[Inicio] --> B[Esperar botón de inicio]
-    B -- Botón presionado --> C[Iniciar programa]
-    C --> D[Contador de giros < 12?]
-    D -- No --> E[Avanzar 1.5s y detenerse]
-    E --> F[Fin]
-    D -- Sí --> G[Leer sensores ultrasónicos]
-    G --> H{¿Frontal > 20cm?}
-    H -- Sí --> I[Avanzar recto]
-    I --> J{¿En tiempo de espera tras giro?}
-    J -- Sí --> G
-    J -- No --> K{¿Izquierda > 200cm?}
-    K -- Sí --> L[Girar izquierda, +1 giro, reset tiempo]
-    L --> I
-    K -- No --> M{¿Derecha > 200cm?}
-    M -- Sí --> N[Girar derecha, +1 giro, reset tiempo]
-    N --> I
-    M -- No --> I
-```
+[![deepseek-mermaid-20250924-719112-1.jpg](https://i.postimg.cc/zBpkKbSc/deepseek-mermaid-20250924-719112-1.jpg)](https://postimg.cc/Q995rMzQ)
 
 ##### Explicacion del Codigo
 
