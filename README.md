@@ -24,14 +24,11 @@
        - [Baterias](#baterias)
        - [Step Down](#step-down)
        - [Motor Driver](#motor-driver)
-       - [LiDar](#LiDar)
        - [PixyCam](#pixycam)
-    - [Microcontroladores](#microcontroladores)
-       - [Raspberry Pi 5](#raspberry-pi-5)
-       - [Raspberry Pi Pico](#raspberry-pi-pico)
+    - [Microcontrolador](#microcontrolador)
+       - [ESP32](#esp32)
        - [Diagrama de Conexiones](#diagrama-de-conexiones)
   - [Apartado de Programacion](#apartado-de-programacion)
-    - [Algoritmo de Navegacion](#algoritmo-de-navegacion)
      - [Desafio Abierto](#desafio-abierto)
        - [Flowchart Abierta](#flowchart-abierta)
        - [Explicacion del Codigo](#explicacion-del-codigo)
@@ -367,7 +364,8 @@ Dando un total de 521 rpm las cuales se transmiten directamente a los ejes de tr
 
 Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la velocidad de salida disminuye, permitiendo un control más preciso del robot, y paralelamente  La reducción aumenta el torque disponible en las ruedas, lo que mejora la capacidad de mover el robot o superar obstáculos.
 
-### Razones para elegir este motor y sistema de reducción
+### Razones para elegir este motor y sistema de r
+educción
 
 - **Versatilidad y control:** El motor de 12V es estándar y confiable. La reducción interna más la reducción por engranajes externos se adapta perfectamente a las necesidades del robot.
 - **Adaptabilidad:** Cambiando los engranajes externos se puede ajustar fácilmente la velocidad y el torque final.
@@ -508,9 +506,6 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 ---
 
-
-
-
 #### PixyCam
 
 [![D-NQ-NP-783616-MLV52840552796-122022-O.webp](https://i.postimg.cc/cHHvF0mV/D-NQ-NP-783616-MLV52840552796-122022-O.webp)](https://postimg.cc/p9wVTN3Z)
@@ -554,34 +549,10 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
    - Active `Frame view` en PixyMon para ver detecciones superpuestas (objetos = rectángulos, líneas = vectores).  
    - Ajuste `Min/max area` para filtrar objetos por tamaño (evitar ruido).   
 
-#### Microcontroladores 
+#### Microcontrolador
 
-##### Raspberry Pi 5
+##### ESP32
 
-[![16gb.webp](https://i.postimg.cc/bNvyf03c/16gb.webp)](https://postimg.cc/xqWDKzwt)
-
-_La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepcional poder de procesamiento, que permite coordinar simultáneamente todos los subsistemas críticos. Su CPU quad-core Cortex-A76 a 2.4 GHz (ampliable a 3.0 GHz) y el elevado ancho de banda de memoria (34.1 GB/s) ofrecen la capacidad necesaria para gestionar la visión artificial de la Pixy2 mediante interfaces de baja latencia (SPI/I²C), supervisar los módulos de control embebidos en la Raspberry Pi Pico, y ejecutar en tiempo real algoritmos complejos de navegación (en este caso, ROS y SLAM) basados en datos LiDAR. Al ser el microcontrolador encargado de gestionar datos de todos los sensores, y de mandar comandos hacia la Raspberry Pico, en esencia es la encargada de centralizar los procesos y la jerarquía de componentes._
-
-
-| **Parámetro**             | **Especificaciones**                            | **Puntos Relevantes**                                                |
-|---------------------------|-----------------------------------------------|---------------------------------------------------------------------|
-| **SoC**                   | Broadcom BCM2712 (64-bit)                     | Procesamiento avanzado para visión artificial y robótica integrada. |
-| **CPU**                   | Quad-core ARM Cortex-A76 @ 2.4 GHz            | Rendimiento 2-3× superior a Raspberry Pi 4 (multitarea crítica).   |
-| **GPU**                   | VideoCore VII (800 MHz)                       | Soporte OpenGL ES 3.1, 4Kp60 H.265 para procesamiento gráfico.     |
-| **RAM**                   | 4GB/8GB LPDDR4X-4267                          | Ancho de banda de 34.1 GB/s (ideal para IA/ML en edge).            |
-| **Conectividad**          | Wi-Fi 6 (802.11ax), BT 5.0, Gigabit Ethernet  | Baja latencia en redes; PoE+ vía HAT.                              |
-| **USB/Periféricos**       | 2× USB 3.0 (5 Gbps), 2× USB 2.0, PCIe 2.0 x1 | Conexión directa a cámaras, sensores y periféricos de alta velocidad. |
-| **Video**                 | 2× micro-HDMI (4K@60Hz dual)                  | Soporte para múltiples pantallas en sistemas de control.           |
-| **Alimentación**          | USB-C PD (5V/5A mínimo recomendado)           | Mayor demanda energética para periféricos integrados.              |
-| **GPIO**                  | 40 pines         | UART, SPI, I²C, PWM para motores/sensores (ej: Pixy2).             |
-| **Enfriamiento**          | Requiere disipador/ventilador activo          | Gestión térmica crítica bajo carga sostenida (overclocking: 3.0 GHz). |
-| **Consumo Máximo**        | ~12W (carga completa)                         | Necesidad de fuente dedicada (no alimentar por puerto PC estándar). |
-| **Interfaces Especiales** | CSI-2 (cámara), DSI (pantalla)                | Soporte nativo para módulos de cámara oficiales. |
-
-> [!NOTE]
-> Ubuntu 24.04, ROS
-
-##### Raspberry Pi Pico
 
 ---
 
@@ -590,12 +561,6 @@ _La Raspberry Pi 5 actúa como la mente maestra de Odin, gracias a su excepciona
 
 ---
 ### Apartado de Programacion
-
-#### Algoritmo de Navegacion
-
-ROS2, Ubuntu, dependencias, ROS.ORG
-Instalar Nav2
-Rviz, costmaps, etc
 
 ##### Flowchart Abierta
 
