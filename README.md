@@ -47,7 +47,8 @@
 
 [![IMG-20250611-WA0013.jpg](https://i.postimg.cc/KvM5HgKW/IMG-20250611-WA0013.jpg)](https://postimg.cc/rKqWdsNG)
 
-Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase regional de la **WRO 2025**.
+Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase Nacionalq1ñq
+qq de la **WRO 2025**.
 
 ---
 
