@@ -551,7 +551,59 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 #### Microcontrolador
 
-##### ESP32
+##### ESP-32
+
+[![esp32-wroom-32e.jpg](https://i.postimg.cc/mDT9SXGN/esp32-wroom-32e.jpg)](https://postimg.cc/f3gkzvyJ)
+
+##### El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
+##### Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
+
+1.  **`Wire.h` (Comunicación I²C):**  
+    Esencial para conectar sensores, pantallas (OLED) o memorias (EEPROM) que usen el bus I²C. Con `Wire.begin(SDA, SCL)` configuras los pines, luego usas `Wire.beginTransmission()`, `Wire.write()`, `Wire.read()` y `Wire.endTransmission()` para enviar/recibir datos. A partir de esta librería establecemos comunicación con el ESP-32.
+
+2.  **`NewPing` (Sensor de Distancia Ultrasónico):**
+La librería NewPing simplifica y optimiza el uso de sensores ultrasónicos como el HC-SR04. Se inicializa con NewPing sonar(TRIG, ECHO, MAX_DISTANCE), y métodos como sonar.ping_cm() devuelven la distancia en centímetros de forma rápida y precisa. Es ideal para proyectos que requieren detección de proximidad sin contacto, como evitar obstáculos en pistas, prevenir colisiones con paredes internas o externas, sistemas de estacionamiento, y robótica móvil. NewPing maneja automáticamente la generación y recepción de pulsos ultrasónicos, mejora la velocidad de medición y reduce errores gracias a funciones avanzadas como mediciones medianas y control de tiempo máximo de eco.
+
+3.  **`ESP32Servo.h` (Control de Servomotores):**  
+    Librería específica para manejar servos en el ESP32, ya que los timers PWM son distintos a Arduino. Con `servo.attach(PIN)` configuras y `servo.write(grados)` posicionas el servo (0°-180°). Crucial para manejar automatismos y conseguir movimiento angular preciso con motores de bajo torque.
+
+4.  **`PixySPI2.h` (Cámara Inteligente Pixy2):**  
+    Facilita la comunicación con la cámara Pixy2 (vía SPI) para visión artificial simple. Detecta objetos por color, formas (bloques) o líneas. Usas `pixy.init()` y `pixy.ccc.getBlocks()` para obtener datos. A partir de la pixy, podemos crear código que pueda identificar los bloques verdes, rojos, y el estacionamiento magenta para que actúe acorde y pueda realizar el desafío cerrado.
+
+5 **`SPI.h` (Comunicación SPI en Arduino):**
+    La librería SPI.h facilita la comunicación rápida y síncrona entre Arduino (como maestro) y dispositivos periféricos mediante el protocolo Serial Peripheral Interface (SPI). Se inicializa con SPI.begin(), y permite enviar y recibir datos simultáneamente con SPI.transfer(). Es ideal para conectar sensores, memorias, pantallas, y otros módulos que requieren alta velocidad y comunicación full-duplex en distancias cortas. SPI maneja automáticamente las señales de reloj, selección de esclavos (SS), y líneas de datos (MOSI y MISO), simplificando la gestión del bus. Además, ofrece funciones para configurar la velocidad, orden de bits y modo de reloj, adaptándose a distintos dispositivos y aplicaciones industriales o robóticas.
+
+### ¿Por qué Pixy2SPI.h?
+
+ La decisión entre usar **`Pixy2SPI.h`** (comunicación SPI) o **`Pixy2.h`** (comunicación I2C) fue un problema con el que nos encontramos apenas comenzamos a utilizar la PixyCam™. En nuestra experiencia, podemos declarar que el protocolo de comunicación SPI transmite datos de forma más rápida que mediante I²C, y por tanto creemos que vale la pena el elegir Pixy2SPI para poder recibir `signatures`
+y datos apenas la pixy los procese
+
+### **1. Rendimiento y Velocidad**  
+- **`Pixy2SPI.h` (SPI)**:  
+  - **Velocidad máxima**: Hasta **10 Mbps** (dependiendo del microcontrolador).  
+  - **Ventaja**: Ideal para aplicaciones que requieren **alta velocidad** (ej: robots en competiciones, procesamiento en tiempo real).  
+  - SPI es **full-duplex**, permitiendo transmisión y recepción simultáneas.  
+
+- **`Pixy2.h` (I2C)**:  
+  - **Velocidad máxima**: Típicamente **400 kHz** (modo estándar) o **1 MHz** (modo rápido).  
+  - **Limitación**: Puede causar cuellos de botella si se transfieren muchos bloques/objetos por fotograma.  
+
+> [!WARNING] 
+> ☑️ **Elige SPI si:** Necesitas máxima velocidad (ej: seguimiento de objetos rápidos, FPS alto).
+> 
+> ☑️**Elige SPI si:** Trabajas en entornos eléctricamente ruidosos (un robot de la WRO)
+
+---
+
+#### Otras razones por las cuales el protocolo SPI nos resultó favorable en testeo y ejecución de la PixyCam en pista:
+
+##### **SPI**:  
+  - **Menos susceptible a ruido** gracias a señales de reloj dedicadas y conexiones punto a punto.  
+  - Ideal para entornos con motores o fuentes de interferencia (ej: competiciones **FIRST Robotics**).  
+
+##### **I2C**:  
+  - Más sensible al ruido debido a su diseño multi-dispositivo en 2 cables.  
+  - Puede requerir pull-up resistors adicionales para evitar fallos.  
 
 
 ---
