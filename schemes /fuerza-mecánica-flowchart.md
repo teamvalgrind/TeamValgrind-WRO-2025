@@ -9,4 +9,4 @@ flowchart LR
     G --> H{Deflexión estructural?}
     H -->|Sí| I[Pérdida de Ackermann]
     H -->|No| J[Comportamiento ideal]
-```a
+```
