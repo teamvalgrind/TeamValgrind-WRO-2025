@@ -125,7 +125,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ### _Apartado Mecanico_
 
-| [![IMG-20250830-WA0023.jpg](https://i.postimg.cc/PqFdDzKL/IMG-20250830-WA0023.jpg)](https://postimg.cc/R3Kr5tk9) | [![unnamed2.jpg](https://i.postimg.cc/ncMMwr9f/unnamed2.jpg)](https://postimg.cc/Mv2WnWY9)| 
+| [![IMG-20250924-WA0009.jpg](https://i.postimg.cc/zfwFK98Y/IMG-20250924-WA0009.jpg)](https://postimg.cc/94M9jgDL) | [![unnamed2.jpg](https://i.postimg.cc/ncMMwr9f/unnamed2.jpg)](https://postimg.cc/Mv2WnWY9)| 
 | :--: | :--: | 
 | *Frontal* | *Posterior* |
 |[![lateralizq.jpg](https://i.postimg.cc/y8vQ6fYZ/lateralizq.jpg)](https://postimg.cc/pm5YqJjW) | [![unnamed.jpg](https://i.postimg.cc/Z5M8DX5V/unnamed.jpg)](https://postimg.cc/rD5RDnWr)| 
