@@ -791,8 +791,6 @@ Control del motor:
 
     IN1=LOW, IN2=LOW: Motor detenido (frenado)
 
-cpp
-
 void Izquierda() {
   digitalWrite(IN1, HIGH);  // Motor activo
   myservo.write(128);       // Servo a posición izquierda
@@ -831,6 +829,7 @@ Mecánica de giro:
     96/100: Posiciones centrales (diferencia por calibración)
 
     Los giros se controlan por tiempo, no por feedback
+```
 
 ##### Desafío Cerrado
 
