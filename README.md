@@ -568,21 +568,10 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 [![deepseek-mermaid-20250924-719112-1.jpg](https://i.postimg.cc/zBpkKbSc/deepseek-mermaid-20250924-719112-1.jpg)](https://postimg.cc/Q995rMzQ)
 
 ##### Explicacion del Codigo
-1. Configuración Inicial y Librerías
-cpp
 
-#include <Wire.h>
-#include <NewPing.h>
-#include <ESP32Servo.h>
+- Definición de Pines y Constantes
 
-    Wire.h: Permite comunicación I2C (no se usa directamente aquí pero es necesaria para algunos componentes)
-
-    NewPing.h: Librería optimizada para sensores ultrasónicos, proporciona mediciones más precisas
-
-    ESP32Servo.h: Control de servomotores específica para ESP32
-
-2. Definición de Pines y Constantes
-cpp
+```cpp
 
 // Pines ESP32 para sensores ultrasónicos
 #define USTFRONT 12    // Trigger del sensor frontal
@@ -599,29 +588,31 @@ cpp
 #define IN1 16         // Control motor (puente H)
 #define PIN_SERVO 2    // Señal del servomotor
 #define PIN_BOTON 15   // Entrada del botón de inicio
+```
 
-Explicación detallada:
 
-    Cada sensor ultrasónico necesita 2 pines: Trigger (envía señal) y Echo (recibe eco)
+Cada sensor ultrasónico necesita 2 pines: Trigger (envía señal) y Echo (recibe eco)
 
-    MAX_DISTANCE: Límite práctico del sensor HC-SR04
+MAX_DISTANCE: Límite práctico del sensor HC-SR04
 
-    IN1/IN2: Controlan la dirección del motor mediante puente H
+IN1/IN2: Controlan la dirección del motor mediante puente H
 
-    PIN_SERVO: Controla la posición del servo de dirección
+PIN_SERVO: Controla la posición del servo de dirección
 
-3. Instanciación de Objetos
-cpp
+- Instanciación de Objetos
 
+```cpp
 NewPing USFRONT(USTFRONT, USEFRONT, MAX_DISTANCE);
 NewPing USLEFT(USTLEFT, USELEFT, MAX_DISTANCE);
 NewPing USRIGHT(USTRIGHT, USERIGHT, MAX_DISTANCE);
 
 Servo myservo;
+```
 
 Crea objetos para interactuar con los sensores y el servo usando las librerías.
-4. Parámetros de Control
-cpp
+
+- Parámetros de Control
+```cpp
 
 const int DISTANCIA_OBSTACULO_FRONTAL = 20;    // Umbral frontal para detección
 const int DISTANCIA_OBSTACULO_LATERAL = 200;   // Umbral lateral para giros
@@ -638,18 +629,19 @@ Valores optimizados experimentalmente:
     420ms/350ms: Tiempos calibrados para giros de 90 grados
 
     300ms: Evita giros consecutivos demasiado rápidos
+```
 
-5. Variables de Estado
-cpp
-
+-  Variables de Estado
+```cpp
 bool programaIniciado = false;    // Control de inicio del programa
 bool finalizado = false;          // Indica si completó los 12 giros
 
 unsigned long tiempoUltimoGiro = 0;  // Marca temporal del último giro
 int contadorGiros = 0;               // Cuenta giros realizados
+```
 
-6. Función setup() - Inicialización
-cpp
+- Función setup() - Inicialización
+```cpp
 
 void setup() {
   myservo.attach(PIN_SERVO);      // Vincula servo al pin
@@ -675,9 +667,11 @@ Flujo de inicialización:
     Establece estado seguro (motor off, servo centrado)
 
     Espera señal de inicio
+```
 
-7. Función loop() - Bucle Principal
-cpp
+- Función loop() - Bucle Principal
+
+```cpp
 
 void loop() {
   if (!programaIniciado) {
@@ -692,10 +686,11 @@ void loop() {
   }
   // Si finalizado, el loop no hace nada
 }
+```
 
-8. Función docegiros() - Lógica Principal
-cpp
+- Función docegiros() - Lógica Principal
 
+```cpp
 void docegiros() {
   unsigned long ahora = millis();  // Tiempo actual
 
@@ -772,9 +767,11 @@ Algoritmo de decisión:
     ¿Hay espacio a derecha? → Girar derecha
 
     Actualizar contadores y temporizadores
+```
 
 9. Funciones de Movimiento
-cpp
+
+```cpp
 
 void Adelante() {
   digitalWrite(IN1, HIGH);  // Activa motor
@@ -834,6 +831,7 @@ Mecánica de giro:
     96/100: Posiciones centrales (diferencia por calibración)
 
     Los giros se controlan por tiempo, no por feedback
+
 ##### Desafío Cerrado
 
 ##### Flowchart Cerrada
