@@ -558,6 +558,8 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 ### Diagrama de Conexiones
 
+[![IMG-20250924-WA0019-1.jpg](https://i.postimg.cc/Df4Qvksy/IMG-20250924-WA0019-1.jpg)](https://postimg.cc/4nZHP0Br)
+
 ---
 ### Apartado de Programacion
 
