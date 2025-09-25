@@ -1099,11 +1099,10 @@ Sistema temporal:
 Esta arquitectura permite un control robusto y adaptable para el desafío cerrado, combinando percepción visual, control de movimiento preciso y gestión de estados complejos.
 
 
-#### Compiladores y Comunicacion
+#### Comunicacion
 
-- **Lenguaje principal:** Python (RCLPY)
-- **Compilador:** PyCharm and ROS (Robot Operated System) 
-- **Comunicación:** USB, Serial Communication, y el servicio de comunicación de ROS 
+- **Lenguaje principal:** C+
+- **Comunicación:** Dual SPI, Serial Communication, UART
 ---
 
 ## Recursos para Hacer el Robot
