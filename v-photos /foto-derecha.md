@@ -1,0 +1,1 @@
+[![IMG-20250924-WA0005.jpg](https://i.postimg.cc/KYKRyTpq/IMG-20250924-WA0005.jpg)](https://postimg.cc/d7Yq2hYr)
