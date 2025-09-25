@@ -558,7 +558,6 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 ### Diagrama de Conexiones
 
-
 ---
 ### Apartado de Programacion
 
@@ -569,190 +568,272 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 [![deepseek-mermaid-20250924-719112-1.jpg](https://i.postimg.cc/zBpkKbSc/deepseek-mermaid-20250924-719112-1.jpg)](https://postimg.cc/Q995rMzQ)
 
 ##### Explicacion del Codigo
+1. Configuración Inicial y Librerías
+cpp
 
-Para empezar, se definen los pines y las constantes necesarias para la operación del hardware. Los sensores ultrasónicos se conectan a diferentes pines del ESP32, y se prepara el control del motor y del servo. También se establecen los umbrales de distancia y tiempos que serán usados para la lógica de navegación.
-
-```cpp
-#define USTFRONT 13
-#define USEFRONT 12
-#define USTLEFT 14
-#define USELEFT 27
-#define USTRIGHT 26
-#define USERIGHT 25
-
-#define MAX_DISTANCE 357
-#define IN2 17
-#define IN1 16
-#define PIN_SERVO 2
-#define PIN_BOTON 4
-
-const int DISTANCIA_OBSTACULO_FRONTAL = 20;
-const int DISTANCIA_OBSTACULO_LATERAL = 200;
-const unsigned long DURACION_GIRO_I = 460;
-const unsigned long DURACION_GIRO_D = 390;
-const unsigned long TIEMPO_ESPERA_GIRO = 1000;
-```
-
-El sistema utiliza librerías como `NewPing` para manejar los sensores ultrasónicos y `ESP32Servo` para el control del servo. La inicialización de estos dispositivos es esencial para que el robot tenga control de su entorno y de su propio movimiento:
-
-```cpp
 #include <Wire.h>
 #include <NewPing.h>
 #include <ESP32Servo.h>
+
+    Wire.h: Permite comunicación I2C (no se usa directamente aquí pero es necesaria para algunos componentes)
+
+    NewPing.h: Librería optimizada para sensores ultrasónicos, proporciona mediciones más precisas
+
+    ESP32Servo.h: Control de servomotores específica para ESP32
+
+2. Definición de Pines y Constantes
+cpp
+
+// Pines ESP32 para sensores ultrasónicos
+#define USTFRONT 12    // Trigger del sensor frontal
+#define USEFRONT 13    // Echo del sensor frontal  
+#define USTLEFT 14     // Trigger del sensor izquierdo
+#define USELEFT 27     // Echo del sensor izquierdo
+#define USTRIGHT 25    // Trigger del sensor derecho
+#define USERIGHT 26    // Echo del sensor derecho
+
+#define MAX_DISTANCE 357  // Distancia máxima de medición en cm
+
+// Pines de control
+#define IN2 17         // Control motor (puente H)
+#define IN1 16         // Control motor (puente H)
+#define PIN_SERVO 2    // Señal del servomotor
+#define PIN_BOTON 15   // Entrada del botón de inicio
+
+Explicación detallada:
+
+    Cada sensor ultrasónico necesita 2 pines: Trigger (envía señal) y Echo (recibe eco)
+
+    MAX_DISTANCE: Límite práctico del sensor HC-SR04
+
+    IN1/IN2: Controlan la dirección del motor mediante puente H
+
+    PIN_SERVO: Controla la posición del servo de dirección
+
+3. Instanciación de Objetos
+cpp
 
 NewPing USFRONT(USTFRONT, USEFRONT, MAX_DISTANCE);
 NewPing USLEFT(USTLEFT, USELEFT, MAX_DISTANCE);
 NewPing USRIGHT(USTRIGHT, USERIGHT, MAX_DISTANCE);
 
 Servo myservo;
-```
 
-Las variables de control permiten al robot llevar registro de su estado, los giros realizados y el tiempo entre cada giro, para evitar movimientos no deseados o repetitivos. Estas variables se usan a lo largo del flujo principal del programa.
+Crea objetos para interactuar con los sensores y el servo usando las librerías.
+4. Parámetros de Control
+cpp
 
-```cpp
-bool programaIniciado = false;
-bool finalizado = false;
+const int DISTANCIA_OBSTACULO_FRONTAL = 20;    // Umbral frontal para detección
+const int DISTANCIA_OBSTACULO_LATERAL = 200;   // Umbral lateral para giros
+const unsigned long DURACION_GIRO_I = 420;     // Tiempo giro izquierda (ms)
+const unsigned long DURACION_GIRO_D = 350;     // Tiempo giro derecha (ms)
+const unsigned long TIEMPO_ESPERA_GIRO = 300;  // Espera entre giros (ms)
 
-unsigned long tiempoUltimoGiro = 0;
-int contadorGiros = 0;
-```
+Valores optimizados experimentalmente:
 
-La función `setup()` es la encargada de preparar todo el hardware. Aquí se asocia el servo, se configura la comunicación serial para mensajes de depuración y se definen los pines como entradas o salidas según su función. El servo se centra y todo el sistema espera la interacción del usuario antes de iniciar la lógica automática.
+    20cm frontal: Distancia segura para detectar obstáculos sin chocar
 
-```cpp
+    200cm lateral: Indica que hay espacio suficiente para girar
+
+    420ms/350ms: Tiempos calibrados para giros de 90 grados
+
+    300ms: Evita giros consecutivos demasiado rápidos
+
+5. Variables de Estado
+cpp
+
+bool programaIniciado = false;    // Control de inicio del programa
+bool finalizado = false;          // Indica si completó los 12 giros
+
+unsigned long tiempoUltimoGiro = 0;  // Marca temporal del último giro
+int contadorGiros = 0;               // Cuenta giros realizados
+
+6. Función setup() - Inicialización
+cpp
+
 void setup() {
-  myservo.attach(PIN_SERVO);
-  Serial.begin(115200);
+  myservo.attach(PIN_SERVO);      // Vincula servo al pin
+  Serial.begin(115200);           // Inicia comunicación serial
 
-  pinMode(PIN_BOTON, INPUT_PULLUP);
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
+  // Configuración de pines
+  pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia pull-up interna
+  pinMode(IN1, OUTPUT);           // Salida para control motor
+  pinMode(IN2, OUTPUT);           // Salida para control motor
 
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-  myservo.write(99);  // Servo centrado
-  delay(3000);
+  // Estado inicial
+  digitalWrite(IN1, LOW);         // Motor apagado
+  digitalWrite(IN2, LOW);         // Motor apagado
+  myservo.write(98);              // Servo en posición central
 
   Serial.println("Esperando pulsar botón para iniciar...");
 }
-```
 
-El ciclo principal del programa se encuentra en `loop()`, donde el robot permanece a la espera de que el usuario pulse el botón de inicio. Una vez detectada la pulsación, el programa entra en la rutina de navegación y ya no responde a más pulsaciones hasta que termina la secuencia de giros.
+Flujo de inicialización:
 
-```cpp
+    Configura hardware
+
+    Establece estado seguro (motor off, servo centrado)
+
+    Espera señal de inicio
+
+7. Función loop() - Bucle Principal
+cpp
+
 void loop() {
   if (!programaIniciado) {
+    // Espera activa del botón
     if (digitalRead(PIN_BOTON) == LOW) {
       programaIniciado = true;
       Serial.println("Botón presionado, iniciando programa...");
-      delay(500);  // debounce
+      delay(500);  // Anti-rebote
     }
   } else if (!finalizado) {
-    docegiros();
+    docegiros();  // Ejecuta lógica principal
   }
+  // Si finalizado, el loop no hace nada
 }
-```
 
-La función `docegiros()` es la función principal dentro del código. Aquí se leen los sensores ultrasónicos, se decide si avanzar o girar, y se lleva el conteo de los giros. Un ejemplo de lectura de los sensores y validación de las lecturas sería:
+8. Función docegiros() - Lógica Principal
+cpp
 
-```cpp
 void docegiros() {
-  unsigned long ahora = millis();
+  unsigned long ahora = millis();  // Tiempo actual
 
+  // Lectura de sensores
   int frontal = USFRONT.ping_cm();
   int izquierda = USLEFT.ping_cm();
   int derecha = USRIGHT.ping_cm();
 
+  // Filtrado de valores erróneos
   if (frontal == 357) frontal = -1;
   if (izquierda == 357) izquierda = -1;
   if (derecha == 357) derecha = -1;
 
-  Serial.print("Distancias (cm) - Frontal: ");
-  Serial.print(frontal);
-  Serial.print(" | Izquierda: ");
-  Serial.print(izquierda);
-  Serial.print(" | Derecha: ");
-  Serial.println(derecha);
+Procesamiento de lecturas:
 
+    ping_cm(): Método de NewPing que devuelve distancia en cm
+
+    357cm: Valor que indica medición fuera de rango → se convierte a -1
+
+cpp
+
+  // Verificación de finalización
   if (contadorGiros >= 12) {
     if (!finalizado) {
       Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
       Adelante();
-      delay(700);
+      delay(250);
       Parar();
       finalizado = true;
     }
-    return;
+    return;  // Sale de la función
   }
 
+Lógica de finalización:
+
+    Después de 12 giros, avanza 250ms extra y se detiene permanentemente
+
+cpp
+
+  // Toma de decisiones de movimiento
   if (frontal != -1 && frontal > DISTANCIA_OBSTACULO_FRONTAL) {
-    Adelante();
-  }
-
-  if (ahora - tiempoUltimoGiro < TIEMPO_ESPERA_GIRO) {
-    Serial.println("Avanzando recto después del giro, sin girar");
-  } else {
-    if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
-      Serial.println("Girando a la izquierda por más de 190 cm libres");
-      Izquierda();
-      contadorGiros++;
-      tiempoUltimoGiro = millis();
-      Adelante();
-    } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
-      Serial.println("Girando a la derecha por más de 190 cm libres");
-      Derecha();
-      contadorGiros++;
-      tiempoUltimoGiro = millis();
-      Adelante();
+    Adelante();  // Avanza si no hay obstáculo frontal
+    
+    // Verifica si puede girar (respetando tiempo de espera)
+    if (ahora - tiempoUltimoGiro > TIEMPO_ESPERA_GIRO) {
+      if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
+        // Giro a izquierda
+        Serial.println("Girando a la izquierda por más de 190 cm libres");
+        delay(200);  // Pequeña pausa antes de girar
+        Izquierda();
+        contadorGiros++;
+        tiempoUltimoGiro = millis();
+        Adelante();
+      } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
+        // Giro a derecha  
+        Serial.println("Girando a la derecha por más de 190 cm libres");
+        Derecha();
+        contadorGiros++;
+        tiempoUltimoGiro = millis();
+        Adelante();
+      }
     }
   }
 }
-```
 
-Las funciones auxiliares de movimiento encapsulan la lógica para avanzar, parar y girar. Por ejemplo, para avanzar el motor se activa y para parar se desactiva:
+Algoritmo de decisión:
 
-```cpp
+    ¿Hay camino frontal? → Avanzar
+
+    ¿Pasó el tiempo de espera desde último giro? → Evaluar giros
+
+    ¿Hay espacio a izquierda? → Girar izquierda
+
+    ¿Hay espacio a derecha? → Girar derecha
+
+    Actualizar contadores y temporizadores
+
+9. Funciones de Movimiento
+cpp
+
 void Adelante() {
-  digitalWrite(IN1, HIGH);
+  digitalWrite(IN1, HIGH);  // Activa motor
+  digitalWrite(IN2, LOW);   // Dirección forward
   Serial.println("Motor en marcha hacia adelante");
 }
 
 void Parar() {
-  digitalWrite(IN1, LOW);
+  digitalWrite(IN1, LOW);   // Desactiva motor
+  digitalWrite(IN2, LOW);
   Serial.println("Motor detenido");
 }
-```
 
-Los giros a izquierda y derecha combinan el movimiento del motor con el ajuste del servo, utilizando temporizadores para asegurar que el giro tenga la duración adecuada. Así, el robot puede girar de manera controlada y precisa antes de volver a avanzar.
+Control del motor:
 
-```cpp
+    IN1=HIGH, IN2=LOW: Motor adelante
+
+    IN1=LOW, IN2=LOW: Motor detenido (frenado)
+
+cpp
+
 void Izquierda() {
-  digitalWrite(IN1, HIGH);
-  myservo.write(150);
+  digitalWrite(IN1, HIGH);  // Motor activo
+  myservo.write(128);       // Servo a posición izquierda
+  
+  // Giro controlado por tiempo
   unsigned long inicio = millis();
   while (millis() - inicio < DURACION_GIRO_I) {
-    delay(10);
+    // Espera activa durante el giro
   }
-  myservo.write(97);  // Centrar servo
-  digitalWrite(IN1, LOW);
+  
+  myservo.write(96);        // Vuelve a centro
+  digitalWrite(IN1, LOW);   // Detiene motor
   Serial.println("Giro izquierda completado");
 }
 
 void Derecha() {
   digitalWrite(IN1, HIGH);
-  myservo.write(30);
+  myservo.write(38);        // Servo a posición derecha
+  
   unsigned long inicio = millis();
   while (millis() - inicio < DURACION_GIRO_D) {
-    delay(10);
+    // Espera activa durante el giro
   }
-  myservo.write(100);  // Centrar servo
+  
+  myservo.write(100);       // Vuelve a centro
   digitalWrite(IN1, LOW);
   Serial.println("Giro derecha completado");
 }
-```
 
-En resumen, este sistema permite que el robot navegue autónomamente por la pista, tome decisiones en tiempo real basadas en la información de los sensores, y complete el reto de realizar 12 giros antes de detenerse automáticamente. Se decidió usar funciones auxiliares para poder crear un "ecosistema" de herramientas que nos permitieran manejar el comportamiento y preferencias del robot de tal forma que su desempeño en la pista sea fácilmente optimizable. Esto también ocurre dentro del Desafío Cerrado
+Mecánica de giro:
 
+    128: Ángulo para giro izquierda (servo gira a la derecha)
+
+    38: Ángulo para giro derecha (servo gira a la izquierda)
+
+    96/100: Posiciones centrales (diferencia por calibración)
+
+    Los giros se controlan por tiempo, no por feedback
 ##### Desafío Cerrado
 
 ##### Flowchart Cerrada
@@ -785,209 +866,222 @@ flowchart LR
 ```
 
 ##### Explicacion del Código
+Desafío Cerrado - Análisis de Componentes Clave
+1. Sistema de Comunicación Dual SPI
+cpp
 
-La lógica de programación del Desafío Cerrado se basa principalmente en la integración y procesamiento de la información proporcionada por la cámara Pixy2, junto con la interpretación de datos de sensores ultrasónicos y la reacción coordinada de los motores y el servo de dirección. El objetivo es que el robot detecte colores específicos en la pista (por ejemplo, bloques verdes o rojos), interprete su posición y tome decisiones inteligentes y adaptativas para sortear obstáculos o ejecutar maniobras según el contexto de la competencia.
+// VSPI para Pixy2 (alto rendimiento)
+#define VSPI_MISO 19
+#define VSPI_MOSI 23  
+#define VSPI_SCK  18
 
-Para lograr esto, el sistema parte de una inicialización robusta de todos los periféricos. Se definen los pines y canales de control para el motor (mediante un puente H y PWM), el servo de dirección, el botón de inicio y los sensores ultrasónicos distribuidos en el frente y laterales del robot. También se configura la cámara Pixy2 para operar en modo de detección de componentes de color, lo que facilita la identificación rápida y eficiente de objetos de interés en la pista. Un fragmento típico de esta inicialización se ve así:
+// HSPI para SD (compatibilidad)
+#define HSPI_MISO 39
+#define HSPI_MOSI 32  
+#define HSPI_SCK  33
 
-```cpp
-#include <Wire.h>
-#include <ESP32Servo.h>
-#include <SPI.h>
-#include <Pixy2SPI_SS.h>
-#include <NewPing.h>
+SPIClass hspi(HSPI);  // Segundo bus SPI independiente
 
-#define IN1 16
-#define IN2 17
-#define MOTOR_PWM_CHANNEL 6
-#define MOTOR_PWM_PIN IN1
-#define PIN_SERVO 2
-#define PIN_BOTON 4
+Arquitectura:
 
-#define USTLEFT 14
-#define USELEFT 27
-#define USTRIGHT 26
-#define USERIGHT 25
-#define USTFRONT 13
-#define USEFRONT 12
+    VSPI: Bus rápido para Pixy2 (necesita alta velocidad)
 
-Pixy2SPI_SS pixy;
-Servo myservo;
+    HSPI: Bus separado para SD (evita interferencias)
 
-NewPing sensorFront(USTFRONT, USEFRONT, 357);
-NewPing sensorIzq(USTLEFT, USELEFT, 357);
-NewPing sensorDer(USTRIGHT, USERIGHT, 357);
-```
+    Los buses trabajan independientemente
 
-Desde el arranque, el robot permanece en estado de espera hasta que el usuario presiona el botón de inicio. En ese momento, se inicia la secuencia de centrado y avance, y el robot comienza a monitorear constantemente la información visual y de proximidad. Mediante la función `loop`, el robot evalúa el estado general y ejecuta acciones basadas en una máquina de estados que contempla escenarios como avanzar, girar, retroceder ante obstáculos, realizar correcciones de trayectoria y ejecutar maniobras especiales ante la detección de colores específicos:
+2. Máquina de Estados
+cpp
 
-```cpp
-void loop() {
-  if (!programaIniciado) {
-    if (digitalRead(PIN_BOTON) == LOW) {
-      programaIniciado = true;
-      Serial.println("Programa iniciado.");
-      delay(500);
-      estadoActual = CENTRANDO_INICIAL;
-      tiempoInicio = millis();
-    }
-    return;
-  }
+enum Estado {
+  DETENIDO,                   // 0 - Inactivo
+  AVANZAR,                    // 1 - Navegación normal
+  ESQUIVAR_VERDE_IZQ,         // 2 - Esquiva bloque verde izquierda
+  ESQUIVAR_ROJO_DER,          // 3 - Esquiva bloque rojo derecha
+  ESQUIVA_PREVENTIVA_VERDE_DER, // 4 - Esquiva preventiva
+  ESQUIVA_PREVENTIVA_ROJO_IZQ, // 5 - Esquiva preventiva
+  // ... más estados
+};
 
-  pixy.ccc.getBlocks();
+Transiciones de estado:
 
-  int front = leerSensorFiltrado(sensorFront);
-  int left = leerSensorFiltrado(sensorIzq);
-  int right = leerSensorFiltrado(sensorDer);
+    Cada estado representa un comportamiento específico
 
-  switch (estadoActual) {
-    case ESPERANDO:
-      break;
-    case CENTRANDO_INICIAL:
-      estadoActual = AVANZANDO;
-      break;
-    case AVANZANDO:
-      // ... lógica de avance y detección de obstáculos
-      break;
-    // ... otros estados
-  }
+    Las transiciones dependen de sensores y temporizadores
+
+    Permite comportamiento complejo mediante estados simples
+
+3. Control PID con Giroscopio
+cpp
+
+const float kP = 1.3;   // Ganancia proporcional
+const float kI = 0.01;  // Ganancia integral  
+const float kD = 0.11;  // Ganancia derivativa
+
+void aplicarCorreccionGiroscopio() {
+  mpu.update();
+  float anguloRaw = mpu.getAngleZ();
+  float anguloZ = anguloRaw - offsetAngleZ;  // Aplica calibración
+  float error = -anguloZ;  // Error es la desviación del cero
+  
+  // Cálculo PID
+  float deltaTime = (currentTime - prevTime) / 1000.0;
+  integralError += error * deltaTime;
+  float derivative = (error - prevError) / deltaTime;
+  float output = kP * error + kI * integralError + kD * derivative;
+  
+  // Aplicar corrección al servo
+  int correccion = ANGULO_CENTRO + (int)output;
+  correccion = constrain(correccion, ANGULO_MIN, ANGULO_MAX);
+  myservo.write(correccion);
 }
-```
 
-Parte esencial de la lógica es el procesamiento de los bloques detectados por la Pixy2. En cada ciclo, se consulta la cantidad de bloques detectados. Si hay bloques, se leen sus coordenadas y su firma (color). Esta información se utiliza para determinar acciones específicas. Por ejemplo, si se detecta un bloque verde (firma 1) y este está en una posición determinada del encuadre de la cámara, el robot puede decidir avanzar recto o realizar un giro suave a la izquierda. En caso contrario, si no hay bloques o la posición no coincide con los umbrales establecidos, el robot puede corregir su trayectoria o seguir avanzando recto, manteniendo siempre la lógica adaptativa.
+Componentes PID:
 
-```cpp
-pixy.ccc.getBlocks();
+    Proporcional (kP): Corrección proporcional al error actual
 
-if (pixy.ccc.numBlocks) {
-  int y = pixy.ccc.blocks[0].m_y;
-  int x = pixy.ccc.blocks[0].m_x;
-  uint8_t sig = pixy.ccc.blocks[0].m_signature;
+    Integral (kI): Corrige error acumulado (deriva gradual)
 
-  Serial.print("Firma detectada: ");
-  Serial.println(sig);
-  Serial.print("Posición X: ");
-  Serial.print(x);
-  Serial.print(" Y: ");
-  Serial.println(y);
+    Derivativo (kD): Amortigua oscilaciones (cambios bruscos)
 
-  if (sig == 1 && y > UMBRAL_Y) {
-    if (!girando) {
-      girando = true;
-      tiempoInicioGiro = millis();
+4. Detección de Colores con Pixy2
+cpp
 
-      if (x > UMBRAL_IZQUIERDA) {
-        Serial.println("Bloque verde a la derecha: Avanzar recto");
-        Adelante();
-        giroIzqActivo = false;
+void leerPixy() {
+  digitalWrite(SD_CS, HIGH);  // Desactiva SD
+  delay(2);
+  digitalWrite(PIXY_CS, LOW); // Activa Pixy2
+  delay(2);
+  
+  pixy.ccc.getBlocks();  // Obtiene bloques detectados
+  
+  digitalWrite(PIXY_CS, HIGH); // Desactiva Pixy2
+  delay(2);
+  
+  if (pixy.ccc.numBlocks) {
+    for (int i = 0; i < pixy.ccc.numBlocks; i++) {
+      int centroX = pixy.ccc.blocks[i].m_x;
+      int area = pixy.ccc.blocks[i].m_width * pixy.ccc.blocks[i].m_height;
+      
+      // Determina posición relativa
+      if (centroX < mitadPantalla - UMBRAL_CENTRO_PIXY) {
+        posicionBloqueX = -1; // Izquierda
+      } else if (centroX > mitadPantalla + UMBRAL_CENTRO_PIXY) {
+        posicionBloqueX = 1;  // Derecha
       } else {
-        Serial.println("Bloque verde a la izquierda: Giro suave izquierda");
-        giroIzquierdaSuave();
-        giroIzqActivo = true;
+        posicionBloqueX = 0;  // Centro
       }
-    } else {
-      Adelante();
+      
+      // Clasifica por color
+      if (pixy.ccc.blocks[i].m_signature == 1) { // Verde
+        bloqueVerdeDetectado = true;
+        bloqueVerdeCercano = (area > UMBRAL_TAMANO_BLOQUE_VERDE);
+      }
     }
+  }
+}
+
+Procesamiento de visión:
+
+    m_x: Posición horizontal del objeto (0-315)
+
+    m_width/m_height: Dimensiones del objeto detectado
+
+    m_signature: Código de color (1=verde, 2=rojo)
+
+    El área determina si el objeto está cerca
+
+5. Sistema de Esquivas
+cpp
+
+case ESQUIVAR_VERDE_IZQ:
+  tiempoFaseActual = millis() - tiempoInicioManiobra;
+  
+  if (tiempoFaseActual < TIEMPO_ESQUIVA_PRIMARIA_VERDE) {
+    // Fase 1: Giro inicial
+    myservo.write(ANGULO_CENTRO + ANGULO_ESQUIVA_PRIMARIO);
+    avanzar();
+  } else if (tiempoFaseActual < TIEMPO_ESQUIVA_PRIMARIA_VERDE + TIEMPO_RECTA_ENTRE_GIROS) {
+    // Fase 2: Avance recto
+    myservo.write(ANGULO_CENTRO);
+    avanzar();
+  } else if (tiempoFaseActual < TIEMPO_ESQUIVA_VERDE) {
+    // Fase 3: Corrección
+    myservo.write(ANGULO_CENTRO - ANGULO_ESQUIVA_SECUNDARIO);
+    avanzar();
   } else {
-    if (girando && millis() - tiempoInicioGiro >= TIEMPO_GIRO_SUAVE) {
-      if (giroIzqActivo) {
-        Serial.println("Corrección giro derecha para enderezar");
-        correccionDerecha();
-      }
-      girando = false;
-    } else {
-      Adelante();
-    }
+    // Finaliza esquiva
+    estadoActual = POST_ESQUIVA_VERDE;
+    tiempoInicioManiobra = millis();
   }
-} else {
-  if (girando && millis() - tiempoInicioGiro >= TIEMPO_GIRO_SUAVE) {
-    if (giroIzqActivo) {
-      Serial.println("Corrección giro derecha para enderezar");
-      correccionDerecha();
-    }
-    girando = false;
-  } else {
-    Adelante();
-  }
-}
-```
+  break;
 
-Las funciones de control de movimiento se encargan de traducir las decisiones de la lógica central en acciones físicas del robot. Por ejemplo, la función `Adelante` activa el motor para avanzar recto y centra el servo; `giroIzquierdaSuave` ajusta el servo para un giro controlado a la izquierda; y `correccionDerecha` realiza una corrección puntual al servo para volver a la trayectoria central tras un giro.
+Secuencia de esquiva:
 
-```cpp
-void Adelante() {
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  myservo.write(97);
-  Serial.println("Avanzando recto");
-}
+    Giro evasivo: Aleja del obstáculo
 
-void giroIzquierdaSuave() {
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  myservo.write(140);
-  Serial.println("Girando suavemente a la izquierda");
+    Avance recto: Distancia de seguridad
+
+    Recuperación: Vuelve a la trayectoria
+
+    Post-esquiva: Ajustes finales
+
+6. Gestión de Memoria y Calibración
+cpp
+
+bool guardarCalibracion(float offset) {
+  File archivo = SD.open("/calibracion.txt", FILE_WRITE);
+  archivo.printf("offset: %.8f\n", offset);
+  archivo.printf("angulo_inicial: %.8f\n", anguloInicial);
+  archivo.close();
 }
 
-void correccionDerecha() {
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  myservo.write(30);
-  delay(TIEMPO_CORRECCION);
-  myservo.write(97);
-  Serial.println("Corrección giro derecha completada");
+bool cargarCalibracion(float &offset) {
+  File archivo = SD.open("/calibracion.txt");
+  String contenido = archivo.readString();
+  // Parsea offset y ángulo inicial
+  archivo.close();
+  
+  // Verifica validez
+  float diferencia = abs(anguloActual - anguloInicial);
+  if (diferencia > 15.0) return false; // Calibración inválida
 }
-```
 
-La integración de los sensores ultrasónicos permite al robot complementar la información visual de la Pixy2 con la percepción de distancias a los obstáculos. Así, el robot no solo reacciona a los colores detectados, sino que también puede evitar colisiones y ajustar su trayectoria para sortear paredes o bloques inesperados. Para este fin, la lectura de los sensores se filtra y se promedia para reducir el efecto del ruido y obtener medidas más confiables:
+Persistencia de calibración:
 
-```cpp
-int leerSensorFiltrado(NewPing& sensor) {
-  int lecturas[LECTURAS_SENSOR];
-  for (int i = 0; i < LECTURAS_SENSOR; i++) {
-    lecturas[i] = sensor.ping_cm();
-    delay(10);
-  }
-  // Ordenar lecturas (bubble sort simple)
-  for (int i = 0; i < LECTURAS_SENSOR - 1; i++) {
-    for (int j = 0; j < LECTURAS_SENSOR - i - 1; j++) {
-      if (lecturas[j] > lecturas[j + 1]) {
-        int temp = lecturas[j];
-        lecturas[j] = lecturas[j + 1];
-        lecturas[j + 1] = temp;
-      }
-    }
-  }
-  // Usar la mediana
-  return lecturas[LECTURAS_SENSOR / 2];
+    Guarda offset del giroscopio en SD
+
+    Verifica integridad al cargar
+
+    Ajusta automáticamente si hay pequeñas desviaciones
+
+7. Control de Tiempos y Sincronización
+cpp
+
+unsigned long tiempoInicioManiobra = 0;
+unsigned long tiempoFaseActual = 0;
+
+// En cada estado:
+tiempoFaseActual = millis() - tiempoInicioManiobra;
+
+if (tiempoFaseActual < TIEMPO_ESQUIVA_PRIMARIA_VERDE) {
+  // Fase 1 activa
+} else if (tiempoFaseActual < TIEMPO_ESQUIVA_PRIMARIA_VERDE + TIEMPO_RECTA_ENTRE_GIROS) {
+  // Fase 2 activa
 }
-```
 
-El uso de una **máquina de estados** permite que el robot maneje situaciones complejas, como la secuencia de retroceder y girar en caso de encontrar un obstáculo frontal, o la lógica de doble giro y corrección tras superar cruces especiales. Cada estado define no solo qué hacer en cada momento, sino también cuándo y cómo pasar al siguiente estado, dependiendo de los tiempos, las lecturas de sensores y las señales de la Pixy2. Por ejemplo, tras detectar un obstáculo, el robot puede retroceder, ejecutar un giro, y luego avanzar sin corrección durante un tiempo predefinido antes de volver al modo de navegación normal.
+Sistema temporal:
 
-La función encargada de decidir la reacción ante un bloque detectado por la Pixy2 evalúa tanto el color como la posición X para determinar si se debe iniciar un giro parcial o completo, y en qué dirección:
+    millis(): Tiempo desde inicio (no se resetea)
 
-```cpp
-void detectarBloque(uint8_t color, int x) {
-  if (color == 1) { // Verde
-    if (x >= UMBRAL_IZQUIERDA && x <= UMBRAL_DERECHA) {
-      iniciarGiroParcial(1);
-    } else if (x < UMBRAL_IZQUIERDA) {
-      iniciarGiro(1);
-    }
-  } else if (color == 2) { // Rojo
-    if (x >= UMBRAL_IZQUIERDA && x <= UMBRAL_DERECHA) {
-      iniciarGiroParcial(2);
-    } else if (x > UMBRAL_DERECHA) {
-      iniciarGiro(2);
-    }
-  }
-}
-```
+    tiempoInicioManiobra: Marca cuando comenzó el estado actual
 
----
+    tiempoFaseActual: Duración en el estado actual
 
-Dentro de `Closed-Challenge.py` y `Open-challenge.py` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto y cerrado.
+    Permite transiciones temporizadas precisas
+
+Esta arquitectura permite un control robusto y adaptable para el desafío cerrado, combinando percepción visual, control de movimiento preciso y gestión de estados complejos.
+
 
 #### Compiladores y Comunicacion
 
