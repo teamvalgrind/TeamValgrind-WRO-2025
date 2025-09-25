@@ -125,12 +125,12 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ### _Apartado Mecanico_
 
-| [![IMG-20250924-WA0009.jpg](https://i.postimg.cc/zfwFK98Y/IMG-20250924-WA0009.jpg)](https://postimg.cc/94M9jgDL) | [![unnamed2.jpg](https://i.postimg.cc/ncMMwr9f/unnamed2.jpg)](https://postimg.cc/Mv2WnWY9)| 
+| [![IMG-20250924-WA0009.jpg](https://i.postimg.cc/zfwFK98Y/IMG-20250924-WA0009.jpg)](https://postimg.cc/94M9jgDL) | [![IMG-20250924-WA0006.jpg](https://i.postimg.cc/Hxhcy2cC/IMG-20250924-WA0006.jpg)](https://postimg.cc/1nD3xDrW)| 
 | :--: | :--: | 
 | *Frontal* | *Posterior* |
-|[![lateralizq.jpg](https://i.postimg.cc/y8vQ6fYZ/lateralizq.jpg)](https://postimg.cc/pm5YqJjW) | [![unnamed.jpg](https://i.postimg.cc/Z5M8DX5V/unnamed.jpg)](https://postimg.cc/rD5RDnWr)| 
+|[![IMG-20250924-WA0007.jpg](https://i.postimg.cc/g003LrS8/IMG-20250924-WA0007.jpg)](https://postimg.cc/PCBCBfk5) | [![IMG-20250924-WA0005.jpg](https://i.postimg.cc/KYKRyTpq/IMG-20250924-WA0005.jpg)](https://postimg.cc/d7Yq2hYr)| 
 | *Izquierda* | *Derecha* |
-|[![unnamed4.jpg](https://i.postimg.cc/0NvkxyjQ/unnamed4.jpg)](https://postimg.cc/cvDyBZQy) | [![1000567564.jpg](https://i.postimg.cc/MTNZCbQk/1000567564.jpg)](https://postimg.cc/njKt7m2T) |
+|[![IMG-20250924-WA0013.jpg](https://i.postimg.cc/HsBxczfv/IMG-20250924-WA0013.jpg)](https://postimg.cc/dLZvg2QG)| [![IMG-20250924-WA0008.jpg](https://i.postimg.cc/mZSZJV2Z/IMG-20250924-WA0008.jpg)](https://postimg.cc/kDBdtQbL) |
 | *Superior* | *Inferior* |
 
 #### _Impresion 3D_
